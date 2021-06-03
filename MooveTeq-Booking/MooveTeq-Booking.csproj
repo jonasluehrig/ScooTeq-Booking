@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4B12E1A0-AD7D-4CF4-960E-878286EC31B2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EFTest</RootNamespace>
-    <AssemblyName>EFTest</AssemblyName>
+    <RootNamespace>MooveTeqBooking</RootNamespace>
+    <AssemblyName>MooveTeqBooking</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -202,16 +202,16 @@
     <Compile Include="Data\Booking.cs" />
     <Compile Include="Data\Customer.cs" />
     <Compile Include="Data\DatabaseContext.cs" />
-    <Compile Include="DummyCustomer.cs" />
+    <Compile Include="Data\DummyCustomer.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20210603113643_Init.cs" />
-    <Compile Include="Migrations\20210603113643_Init.designer.cs">
-      <DependentUpon>20210603113643_Init.cs</DependentUpon>
+    <Compile Include="Migrations\20210603120327_Init.cs" />
+    <Compile Include="Migrations\20210603120327_Init.designer.cs">
+      <DependentUpon>20210603120327_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
     <Compile Include="Pages\LoginOrRegister.cs">

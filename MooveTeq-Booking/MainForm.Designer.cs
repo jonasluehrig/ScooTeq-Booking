@@ -1,5 +1,5 @@
 ﻿
-namespace EFTest {
+namespace MooveTeqBooking {
     partial class MainForm {
         /// <summary>
         /// Erforderliche Designervariable.

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore; 
 
-namespace EFTest {
+namespace MooveTeqBooking {
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();
@@ -20,11 +20,11 @@ namespace EFTest {
 
         void InitDatabase() {
             if (!File.Exists("Customers.sqlite")) {
-                using (var db = new DatabaseContext()) {
+                using (var db = new Data.DatabaseContext()) {
                     db.Database.Migrate();
 
                     db.Add(
-                        new DataTypes.Customer() {
+                        new Data.Customer() {
                             UserName = "admin",
                             FirstName = "Demo",
                             LastName = "Admin",
@@ -37,7 +37,7 @@ namespace EFTest {
 
                     for (int i = 1; i <= 10; i++) {
                         try {
-                            db.Add(DummyCustomer.GetRandomDummy(rnd));
+                            db.Add(Data.DummyCustomer.GetRandomDummy(rnd));
                         } catch (Exception) {
                             i--;
                         }
@@ -47,7 +47,5 @@ namespace EFTest {
                 }
             }
         }
-
-        
     }
 }

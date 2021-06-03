@@ -1,5 +1,5 @@
 ﻿
-namespace EFTest.Pages {
+namespace MooveTeqBooking.Pages {
     partial class LoginOrRegister {
         /// <summary> 
         /// Erforderliche Designervariable.

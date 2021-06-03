@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EFTest.Pages {
+namespace MooveTeqBooking.Pages {
     public partial class LoginOrRegister : UserControl {
         public LoginOrRegister() {
             InitializeComponent();

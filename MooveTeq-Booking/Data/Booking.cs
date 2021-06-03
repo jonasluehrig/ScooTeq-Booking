@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EFTest.DataTypes {
+namespace MooveTeqBooking.Data {
     public class Booking {
         public int BookingId { get; set; }
         public Customer Customer { get; set; }

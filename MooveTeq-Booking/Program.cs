@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EFTest {
+namespace MooveTeqBooking {
     static class Program {
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
