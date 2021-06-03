@@ -16,6 +16,15 @@ namespace MooveTeqBooking {
             InitializeComponent();
 
             InitDatabase();
+
+            ChangeView(new Pages.LoginOrRegister(this));
+        }
+
+        public void ChangeView(Control NextControl) {
+            Controls.Clear();
+            Controls.Add(NextControl);
+            ClientSize = NextControl.Size;
+            Text = NextControl.Text;
         }
 
         void InitDatabase() {

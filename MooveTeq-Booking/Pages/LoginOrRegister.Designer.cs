@@ -37,8 +37,8 @@ namespace MooveTeqBooking.Pages {
             this.registerLastName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.loginUsername = new System.Windows.Forms.TextBox();
+            this.loginPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -159,21 +159,22 @@ namespace MooveTeqBooking.Pages {
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Anmelden";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // textBox1
+            // loginUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 23);
-            this.textBox1.TabIndex = 1;
+            this.loginUsername.Location = new System.Drawing.Point(9, 40);
+            this.loginUsername.Name = "loginUsername";
+            this.loginUsername.Size = new System.Drawing.Size(238, 23);
+            this.loginUsername.TabIndex = 1;
             // 
-            // textBox2
+            // loginPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(9, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 23);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.loginPassword.Location = new System.Drawing.Point(9, 84);
+            this.loginPassword.Name = "loginPassword";
+            this.loginPassword.Size = new System.Drawing.Size(238, 23);
+            this.loginPassword.TabIndex = 2;
+            this.loginPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -208,8 +209,8 @@ namespace MooveTeqBooking.Pages {
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.loginButton);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.loginUsername);
+            this.groupBox1.Controls.Add(this.loginPassword);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,8 +279,8 @@ namespace MooveTeqBooking.Pages {
         private System.Windows.Forms.TextBox registerLastName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox loginUsername;
+        private System.Windows.Forms.TextBox loginPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;

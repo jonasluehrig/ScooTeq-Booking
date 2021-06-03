@@ -203,6 +203,7 @@
     <Compile Include="Data\Customer.cs" />
     <Compile Include="Data\DatabaseContext.cs" />
     <Compile Include="Data\DummyCustomer.cs" />
+    <Compile Include="Data\PasswordHashing.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +220,12 @@
     </Compile>
     <Compile Include="Pages\LoginOrRegister.Designer.cs">
       <DependentUpon>LoginOrRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimeDistanceChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\TimeDistanceChoice.Designer.cs">
+      <DependentUpon>TimeDistanceChoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
