@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EFTest {
+namespace MooveTeqBooking.Data {
     class DummyCustomer {
         private static string _firstnames = @"Liam
 Noah
@@ -107,13 +107,13 @@ Wesley
 Kayden
 Silas";
 
-        public static DataTypes.Customer GetRandomDummy(Random rnd = null) {
+        public static Customer GetRandomDummy(Random rnd = null) {
             var stringArray = _firstnames.Split('\n');
             var chosenFirstname = stringArray[
                 (rnd ?? new Random()).Next(0,stringArray.Length-1)
             ];
 
-            return new DataTypes.Customer() {
+            return new Customer() {
                 UserName = chosenFirstname.ToLower().Substring(0,3) + "_dummy",
                 FirstName = chosenFirstname,
                 LastName = "Dummyuser",

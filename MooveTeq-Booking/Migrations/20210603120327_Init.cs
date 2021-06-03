@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EFTest.Migrations
+namespace MooveTeqBooking.Migrations
 {
     public partial class Init : Migration
     {

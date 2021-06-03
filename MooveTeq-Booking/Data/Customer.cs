@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EFTest.DataTypes {
+namespace MooveTeqBooking.Data {
     public class Customer {
         public int CustomerId { get; set; }
         public string UserName { get; set; }
