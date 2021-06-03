@@ -199,22 +199,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\Booking.cs" />
-    <Compile Include="DataTypes\Customer.cs" />
+    <Compile Include="Data\Booking.cs" />
+    <Compile Include="Data\Customer.cs" />
+    <Compile Include="Data\DatabaseContext.cs" />
     <Compile Include="DummyCustomer.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\20210603113643_Init.cs" />
     <Compile Include="Migrations\20210603113643_Init.designer.cs">
       <DependentUpon>20210603113643_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
+    <Compile Include="Pages\LoginOrRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\LoginOrRegister.Designer.cs">
+      <DependentUpon>LoginOrRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginOrRegister.resx">
+      <DependentUpon>LoginOrRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -223,6 +236,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

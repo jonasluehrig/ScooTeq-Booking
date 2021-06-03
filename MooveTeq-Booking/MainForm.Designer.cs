@@ -1,6 +1,6 @@
 ﻿
 namespace EFTest {
-    partial class Form1 {
+    partial class MainForm {
         /// <summary>
         /// Erforderliche Designervariable.
         /// </summary>
@@ -24,10 +24,20 @@ namespace EFTest {
         /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(484, 265);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MooveTeq  Buchungssystem";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

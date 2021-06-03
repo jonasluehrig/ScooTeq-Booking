@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFTest.Migrations
 {
-    [DbContext(typeof(Form1.DatabaseContext))]
+    [DbContext(typeof(MainForm.DatabaseContext))]
     partial class DatabaseContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

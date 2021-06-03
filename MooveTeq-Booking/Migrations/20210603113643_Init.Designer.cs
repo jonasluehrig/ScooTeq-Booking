@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFTest.Migrations
 {
-    [DbContext(typeof(Form1.DatabaseContext))]
+    [DbContext(typeof(MainForm.DatabaseContext))]
     [Migration("20210603113643_Init")]
     partial class Init
     {
