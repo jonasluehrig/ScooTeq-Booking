@@ -29,6 +29,7 @@ namespace MooveTeqBooking.Pages {
 
             if(!PasswordHashing.TestPasswordAgainstHash(loginPassword.Text, customer.PasswordHash)) {
                 MessageBox.Show(this, "Das angegebene Password ist falsch.", "Anmeldefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             _parent.ChangeView(new TimeDistanceChoice(_parent, customer));
