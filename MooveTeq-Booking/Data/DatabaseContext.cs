@@ -1,9 +1,10 @@
-﻿using Bogus;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace MooveTeqBooking.Data {
+namespace MooveTeqBooking.Data
+{
     public class DatabaseContext : DbContext {
         public DbSet<Customer> Customers { get; set; }
+
         public DbSet<Booking> Bookings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
