@@ -1,28 +1,29 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Microsoft.Data.Sqlite;
 using MooveTeqBooking.Data;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Data.Sqlite;
+using System.Windows.Forms;
 
-namespace MooveTeqBooking.Pages {
+namespace MooveTeqBooking.Pages
+{
     public partial class LoginOrRegister : UserControl {
-        private MainForm _parent;
-        
+        private readonly MainForm parent;
+
         public LoginOrRegister(MainForm Parent) {
             InitializeComponent();
 
-            _parent = Parent;
+            parent = Parent;
         }
 
-        private async void loginButton_Click(object sender, System.EventArgs e) {
+        private async void LoginButton_Click(object sender, System.EventArgs e) {
             Customer customer;
 
             this.Cursor = Cursors.WaitCursor;
             this.Enabled = false;
 
             using (var db = new DatabaseContext()) {
-                var customers = (from c in db.Customers where (c.UserName == loginUsername.Text) select c);
+                var customers = from c in db.Customers where c.UserName == loginUsername.Text select c;
 
                 customer = customers.Count() == 1 ? customers.First() : null;
             }
@@ -47,7 +48,7 @@ namespace MooveTeqBooking.Pages {
                 return;
             }
 
-            _parent.ChangeView(new TimeDistanceChoice(_parent, customer));
+            parent.ChangeView(new TimeDistanceChoice(parent, customer));
         }
 
         private async void registerButton_Click(object sender, EventArgs e) {
@@ -75,7 +76,7 @@ namespace MooveTeqBooking.Pages {
                     db.Add(customer);
                     await db.SaveChangesAsync();
 
-                    _parent.ChangeView(new TimeDistanceChoice(_parent, customer));
+                    parent.ChangeView(new TimeDistanceChoice(parent, customer));
                 }
             } catch (SqliteException ex) {
                 if(ex.SqliteErrorCode == 19) {
@@ -112,7 +113,7 @@ namespace MooveTeqBooking.Pages {
         private void loginPassword_KeyDown(object sender, KeyEventArgs e) {
             if(e.KeyCode == Keys.Enter) {
                 e.Handled = true;
-                loginButton_Click(null, null);
+                LoginButton_Click(null, null);
             }
         }
     }

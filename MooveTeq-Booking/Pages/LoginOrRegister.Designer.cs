@@ -178,7 +178,7 @@ namespace MooveTeqBooking.Pages {
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Anmelden";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // loginUsername
             // 

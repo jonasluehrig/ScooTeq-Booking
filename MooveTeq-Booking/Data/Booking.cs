@@ -6,7 +6,7 @@ namespace MooveTeqBooking.Data {
 
         public Customer Customer { get; set; }
 
-        public int CustomerId{ get; set; }
+        public int CustomerId { get; set; }
 
         public DateTime? StartTime { get; set; }
 

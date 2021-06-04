@@ -3,35 +3,34 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
 namespace MooveTeqBooking.Data {
-    class PasswordHashing {
-        const int SALT_SIZE = 24; // size in bytes
-        const int HASH_SIZE = 24; // size in bytes
-        const int ITERATIONS = 100000; // number of pbkdf2 iterations
+    internal class PasswordHashing {
+        private const int SaltSize = 24; // size in bytes
+        private const int Iterations = 100000; // number of pbkdf2 iterations
 
-        public static string GetPasswordHash(string CleartextPassword, byte[] Salt = null) {
+        public static string GetPasswordHash(string cleartextPassword, byte[] existingSalt = null) {
             // Generate a salt
-            byte[] salt = new byte[SALT_SIZE];
-            if (Salt is null) {
-                RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
-                salt = new byte[SALT_SIZE];
+            var salt = new byte[SaltSize];
+            if (existingSalt is null) {
+                var provider = new RNGCryptoServiceProvider();
+                salt = new byte[SaltSize];
                 provider.GetBytes(salt);
             } else {
-                salt = Salt;
+                salt = existingSalt;
             }
 
             // Generate the hash
-            Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(CleartextPassword, salt, ITERATIONS);
+            var pbkdf2 = new Rfc2898DeriveBytes(cleartextPassword, salt, Iterations);
 
             return Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(pbkdf2.GetBytes(64));
         }
 
-        public static bool TestPasswordAgainstHash(string CleartextPassword, string Hash) {
-            var matches = Regex.Match(Hash, @"^([A-Za-z0-9+=/]+):([A-Za-z0-9+=/]+)$");
+        public static bool TestPasswordAgainstHash(string cleartextPassword, string hash) {
+            var matches = Regex.Match(hash, @"^([A-Za-z0-9+=/]+):([A-Za-z0-9+=/]+)$");
             byte[] salt = Convert.FromBase64String(matches.Groups[1].Value);
 
-            var hashedPassword = GetPasswordHash(CleartextPassword, salt);
+            var hashedPassword = GetPasswordHash(cleartextPassword, salt);
 
-            return hashedPassword == Hash;
+            return hashedPassword == hash;
         }
     }
 }
