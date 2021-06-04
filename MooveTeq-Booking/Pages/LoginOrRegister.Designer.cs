@@ -62,12 +62,14 @@ namespace MooveTeqBooking.Pages {
             // 
             // registerButton
             // 
+            this.registerButton.Enabled = false;
             this.registerButton.Location = new System.Drawing.Point(8, 246);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(240, 27);
             this.registerButton.TabIndex = 9;
             this.registerButton.Text = "Registrieren";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // registerFirstName
             // 
@@ -75,6 +77,7 @@ namespace MooveTeqBooking.Pages {
             this.registerFirstName.Name = "registerFirstName";
             this.registerFirstName.Size = new System.Drawing.Size(118, 20);
             this.registerFirstName.TabIndex = 4;
+            this.registerFirstName.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // registerPasswortRepeat
             // 
@@ -83,6 +86,7 @@ namespace MooveTeqBooking.Pages {
             this.registerPasswortRepeat.Size = new System.Drawing.Size(240, 20);
             this.registerPasswortRepeat.TabIndex = 8;
             this.registerPasswortRepeat.UseSystemPasswordChar = true;
+            this.registerPasswortRepeat.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // label3
             // 
@@ -109,6 +113,7 @@ namespace MooveTeqBooking.Pages {
             this.registerPassword.Size = new System.Drawing.Size(240, 20);
             this.registerPassword.TabIndex = 7;
             this.registerPassword.UseSystemPasswordChar = true;
+            this.registerPassword.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // registerUsername
             // 
@@ -116,6 +121,7 @@ namespace MooveTeqBooking.Pages {
             this.registerUsername.Name = "registerUsername";
             this.registerUsername.Size = new System.Drawing.Size(240, 20);
             this.registerUsername.TabIndex = 6;
+            this.registerUsername.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // label5
             // 
@@ -141,6 +147,7 @@ namespace MooveTeqBooking.Pages {
             this.registerLastName.Name = "registerLastName";
             this.registerLastName.Size = new System.Drawing.Size(118, 20);
             this.registerLastName.TabIndex = 5;
+            this.registerLastName.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // label1
             // 
@@ -153,6 +160,7 @@ namespace MooveTeqBooking.Pages {
             // 
             // loginButton
             // 
+            this.loginButton.Enabled = false;
             this.loginButton.Location = new System.Drawing.Point(9, 246);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(238, 27);
@@ -167,6 +175,7 @@ namespace MooveTeqBooking.Pages {
             this.loginUsername.Name = "loginUsername";
             this.loginUsername.Size = new System.Drawing.Size(238, 23);
             this.loginUsername.TabIndex = 1;
+            this.loginUsername.TextChanged += new System.EventHandler(this.loginBoxes_TextChanged);
             // 
             // loginPassword
             // 
@@ -175,6 +184,8 @@ namespace MooveTeqBooking.Pages {
             this.loginPassword.Size = new System.Drawing.Size(238, 23);
             this.loginPassword.TabIndex = 2;
             this.loginPassword.UseSystemPasswordChar = true;
+            this.loginPassword.TextChanged += new System.EventHandler(this.loginBoxes_TextChanged);
+            this.loginPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.loginPassword_KeyDown);
             // 
             // label2
             // 

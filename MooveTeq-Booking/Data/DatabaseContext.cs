@@ -19,7 +19,7 @@ namespace MooveTeqBooking.Data {
                 .Property(c => c.UserName)
                 .HasColumnType("TEXT COLLATE NOCASE");
 
-            var customerId = 2;
+            /*var customerId = 2;
             var testUsers = new Faker<Data.Customer>()
                 .RuleFor(x => x.CustomerId, f => customerId++)
                 .RuleFor(x => x.FirstName, f => f.Person.FirstName)
@@ -44,7 +44,7 @@ namespace MooveTeqBooking.Data {
 
             builder
                 .Entity<Customer>()
-                .HasData(z);
+                .HasData(z);*/
         }
     }
 }
