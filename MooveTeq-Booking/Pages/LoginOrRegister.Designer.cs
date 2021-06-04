@@ -54,15 +54,17 @@ namespace MooveTeqBooking.Pages {
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(8, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(54, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Vorname";
             // 
             // registerButton
             // 
             this.registerButton.Enabled = false;
+            this.registerButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.Location = new System.Drawing.Point(8, 246);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(240, 27);
@@ -73,17 +75,19 @@ namespace MooveTeqBooking.Pages {
             // 
             // registerFirstName
             // 
+            this.registerFirstName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerFirstName.Location = new System.Drawing.Point(8, 40);
             this.registerFirstName.Name = "registerFirstName";
-            this.registerFirstName.Size = new System.Drawing.Size(118, 20);
+            this.registerFirstName.Size = new System.Drawing.Size(118, 23);
             this.registerFirstName.TabIndex = 4;
             this.registerFirstName.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // registerPasswortRepeat
             // 
+            this.registerPasswortRepeat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerPasswortRepeat.Location = new System.Drawing.Point(8, 172);
             this.registerPasswortRepeat.Name = "registerPasswortRepeat";
-            this.registerPasswortRepeat.Size = new System.Drawing.Size(240, 20);
+            this.registerPasswortRepeat.Size = new System.Drawing.Size(240, 23);
             this.registerPasswortRepeat.TabIndex = 8;
             this.registerPasswortRepeat.UseSystemPasswordChar = true;
             this.registerPasswortRepeat.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
@@ -91,61 +95,68 @@ namespace MooveTeqBooking.Pages {
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(8, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Passwort";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(8, 154);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 13);
+            this.label7.Size = new System.Drawing.Size(122, 15);
             this.label7.TabIndex = 12;
             this.label7.Text = "Passwort wiederholen";
             // 
             // registerPassword
             // 
+            this.registerPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerPassword.Location = new System.Drawing.Point(8, 128);
             this.registerPassword.Name = "registerPassword";
-            this.registerPassword.Size = new System.Drawing.Size(240, 20);
+            this.registerPassword.Size = new System.Drawing.Size(240, 23);
             this.registerPassword.TabIndex = 7;
             this.registerPassword.UseSystemPasswordChar = true;
             this.registerPassword.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // registerUsername
             // 
+            this.registerUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerUsername.Location = new System.Drawing.Point(8, 84);
             this.registerUsername.Name = "registerUsername";
-            this.registerUsername.Size = new System.Drawing.Size(240, 20);
+            this.registerUsername.Size = new System.Drawing.Size(240, 23);
             this.registerUsername.TabIndex = 6;
             this.registerUsername.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(127, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.Size = new System.Drawing.Size(65, 15);
             this.label5.TabIndex = 8;
             this.label5.Text = "Nachname";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(8, 66);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.Size = new System.Drawing.Size(83, 15);
             this.label6.TabIndex = 10;
             this.label6.Text = "Benutzername";
             // 
             // registerLastName
             // 
+            this.registerLastName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerLastName.Location = new System.Drawing.Point(130, 40);
             this.registerLastName.Name = "registerLastName";
-            this.registerLastName.Size = new System.Drawing.Size(118, 20);
+            this.registerLastName.Size = new System.Drawing.Size(118, 23);
             this.registerLastName.TabIndex = 5;
             this.registerLastName.TextChanged += new System.EventHandler(this.registerBoxes_TextChanged);
             // 

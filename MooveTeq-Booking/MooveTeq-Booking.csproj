@@ -218,6 +218,12 @@
       <DependentUpon>20210604101233_BogusDataWithPasswd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
+    <Compile Include="Pages\BookByTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\BookByTime.Designer.cs">
+      <DependentUpon>BookByTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginOrRegister.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -235,8 +241,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\BookByTime.resx">
+      <DependentUpon>BookByTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\LoginOrRegister.resx">
       <DependentUpon>LoginOrRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\TimeDistanceChoice.resx">
+      <DependentUpon>TimeDistanceChoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -265,6 +277,18 @@
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registration_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_shield_16px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
