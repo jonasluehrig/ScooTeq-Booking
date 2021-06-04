@@ -5,8 +5,6 @@ namespace MooveTeqBooking {
         public MainForm() {
             InitializeComponent();
 
-            //InitDatabase();
-
             ChangeView(new Pages.LoginOrRegister(this));
         }
 

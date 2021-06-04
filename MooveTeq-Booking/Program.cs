@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MooveTeqBooking {
-    static class Program {
+    internal static class Program {
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>

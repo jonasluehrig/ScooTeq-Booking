@@ -24,13 +24,13 @@ namespace MooveTeqBooking.Data {
             return Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(pbkdf2.GetBytes(64));
         }
 
-        public static bool TestPasswordAgainstHash(string cleartextPassword, string Hash) {
-            var matches = Regex.Match(Hash, @"^([A-Za-z0-9+=/]+):([A-Za-z0-9+=/]+)$");
+        public static bool TestPasswordAgainstHash(string cleartextPassword, string hash) {
+            var matches = Regex.Match(hash, @"^([A-Za-z0-9+=/]+):([A-Za-z0-9+=/]+)$");
             byte[] salt = Convert.FromBase64String(matches.Groups[1].Value);
 
             var hashedPassword = GetPasswordHash(cleartextPassword, salt);
 
-            return hashedPassword == Hash;
+            return hashedPassword == hash;
         }
     }
 }
