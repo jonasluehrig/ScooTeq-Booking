@@ -23,7 +23,7 @@ namespace MooveTeqBooking.Pages {
         }
 
         private void bookByTimeButton_Click(object sender, System.EventArgs e) {
-
+            _parent.ChangeView(new BookByTime(_parent, _customer));
         }
     }
 }

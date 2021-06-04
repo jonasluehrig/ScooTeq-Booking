@@ -31,12 +31,16 @@ namespace MooveTeqBooking.Pages {
             this.welcomeMessageLabel = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.startCounterButton = new System.Windows.Forms.Button();
+            this.stopCounterButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.timerLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +53,7 @@ namespace MooveTeqBooking.Pages {
             this.welcomeMessageLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(680, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(583, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -99,49 +103,93 @@ namespace MooveTeqBooking.Pages {
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 374);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(583, 321);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(202, 129);
+            this.panel1.Location = new System.Drawing.Point(159, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 115);
+            this.panel1.Size = new System.Drawing.Size(265, 144);
             this.panel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.startCounterButton, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.stopCounterButton, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 81);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(265, 63);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // startCounterButton
+            // 
+            this.startCounterButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startCounterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startCounterButton.ForeColor = System.Drawing.Color.Green;
+            this.startCounterButton.Location = new System.Drawing.Point(3, 3);
+            this.startCounterButton.Name = "startCounterButton";
+            this.startCounterButton.Size = new System.Drawing.Size(126, 57);
+            this.startCounterButton.TabIndex = 0;
+            this.startCounterButton.Text = "Start";
+            this.startCounterButton.UseVisualStyleBackColor = true;
+            this.startCounterButton.Click += new System.EventHandler(this.startCounterButton_Click);
+            // 
+            // stopCounterButton
+            // 
+            this.stopCounterButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stopCounterButton.Enabled = false;
+            this.stopCounterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stopCounterButton.ForeColor = System.Drawing.Color.Red;
+            this.stopCounterButton.Location = new System.Drawing.Point(135, 3);
+            this.stopCounterButton.Name = "stopCounterButton";
+            this.stopCounterButton.Size = new System.Drawing.Size(127, 57);
+            this.stopCounterButton.TabIndex = 1;
+            this.stopCounterButton.Text = "Stop";
+            this.stopCounterButton.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.timerLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(265, 47);
+            this.panel2.TabIndex = 1;
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.timerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timerLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerLabel.Location = new System.Drawing.Point(0, 0);
+            this.timerLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.timerLabel.Size = new System.Drawing.Size(265, 47);
+            this.timerLabel.TabIndex = 1;
+            this.timerLabel.Text = "00:00:00";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 21);
+            this.label1.Size = new System.Drawing.Size(265, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vergangene Zeit";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 21);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(276, 54);
-            this.panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(276, 54);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "00:00:00";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BookByTime
             // 
@@ -151,11 +199,12 @@ namespace MooveTeqBooking.Pages {
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "BookByTime";
-            this.Size = new System.Drawing.Size(680, 399);
+            this.Size = new System.Drawing.Size(583, 346);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -173,6 +222,9 @@ namespace MooveTeqBooking.Pages {
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button startCounterButton;
+        private System.Windows.Forms.Button stopCounterButton;
+        private System.Windows.Forms.Label timerLabel;
     }
 }
