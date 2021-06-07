@@ -71,25 +71,28 @@ namespace MooveTeqBooking.Pages
                 PasswordHash = PasswordHashing.GetPasswordHash(registerPassword.Text)
             };
 
-            try {
-                using (var db = new DatabaseContext()) {
-                    db.Add(customer);
-                    await db.SaveChangesAsync();
+            using (var db = new DatabaseContext()) {
+                db.Add(customer);
 
-                    parent.ChangeView(new TimeDistanceChoice(parent, customer));
+                try {
+                    await db.SaveChangesAsync();
+                } catch (Exception ex) {
+                    if (((SqliteException) ex.InnerException).SqliteErrorCode == 19) {
+                        MessageBox.Show(this, "Der Benutzername ist bereits vergeben.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    } else {
+                        MessageBox.Show(
+                            this,
+                            $"Ein unbekannter Datenbankfehler ist aufgetreten:\n\n{ ex.Message }",
+                            "Fehler",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+
+                    return;
                 }
-            } catch (SqliteException ex) {
-                if(ex.SqliteErrorCode == 19) {
-                    MessageBox.Show(this, "Der Benutzername ist bereits vergeben.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } else {
-                    MessageBox.Show(
-                        this,
-                        $"Ein unbekannter Datenbankfehler {ex.SqliteErrorCode} ist aufgetreten:\n\n{ex.Message}",
-                        "Fehler",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-                }
+
+                parent.ChangeView(new TimeDistanceChoice(parent, customer));
             }
 
             this.Cursor = Cursors.Default;

@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using Microsoft.EntityFrameworkCore;
+using System.IO;
+using System.Windows.Forms;
 
 namespace MooveTeqBooking {
     public partial class MainForm : Form {
@@ -6,6 +8,12 @@ namespace MooveTeqBooking {
             InitializeComponent();
 
             ChangeView(new Pages.LoginOrRegister(this));
+
+            if (!File.Exists("Customers.sqlite")) {
+                using (var db = new Data.DatabaseContext()) {
+                    db.Database.Migrate();
+                }
+            }
         }
 
         public void ChangeView(Control nextControl) {

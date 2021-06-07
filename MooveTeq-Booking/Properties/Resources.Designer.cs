@@ -73,9 +73,39 @@ namespace MooveTeqBooking.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ezgif_2_11bc2ebf0339 {
+            get {
+                object obj = ResourceManager.GetObject("ezgif-2-11bc2ebf0339", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paper_money_16px {
+            get {
+                object obj = ResourceManager.GetObject("paper_money_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap registration_16px {
             get {
                 object obj = ResourceManager.GetObject("registration_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ScooTec3 {
+            get {
+                object obj = ResourceManager.GetObject("ScooTec3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

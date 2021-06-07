@@ -25,9 +25,7 @@ namespace MooveTeqBooking.Pages {
         /// </summary>
         private void InitializeComponent() {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.logoutButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.usernameLabel = new System.Windows.Forms.ToolStripLabel();
             this.welcomeMessageLabel = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,6 +35,9 @@ namespace MooveTeqBooking.Pages {
             this.panel2 = new System.Windows.Forms.Panel();
             this.timerLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.ToolStripButton();
+            this.usernameLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,37 +58,18 @@ namespace MooveTeqBooking.Pages {
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // logoutButton
-            // 
-            this.logoutButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Image = global::MooveTeqBooking.Properties.Resources.exit_16px;
-            this.logoutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(65, 22);
-            this.logoutButton.Text = "Logout";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // usernameLabel
-            // 
-            this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Image = global::MooveTeqBooking.Properties.Resources.user_16px;
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(92, 22);
-            this.usernameLabel.Text = "<Username>";
-            // 
             // welcomeMessageLabel
             // 
             this.welcomeMessageLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeMessageLabel.Name = "welcomeMessageLabel";
-            this.welcomeMessageLabel.Size = new System.Drawing.Size(222, 22);
-            this.welcomeMessageLabel.Text = "Willkommen, <Firstname> <Lastname>!";
+            this.welcomeMessageLabel.Size = new System.Drawing.Size(209, 22);
+            this.welcomeMessageLabel.Text = "Gute Fahrt, <Firstname> <Lastname>!";
             // 
             // tableLayoutPanel1
             // 
@@ -96,6 +78,7 @@ namespace MooveTeqBooking.Pages {
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.statusLabel, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -156,6 +139,7 @@ namespace MooveTeqBooking.Pages {
             this.stopCounterButton.TabIndex = 1;
             this.stopCounterButton.Text = "Stop";
             this.stopCounterButton.UseVisualStyleBackColor = true;
+            this.stopCounterButton.Click += new System.EventHandler(this.stopCounterButton_Click);
             // 
             // panel2
             // 
@@ -179,6 +163,7 @@ namespace MooveTeqBooking.Pages {
             this.timerLabel.TabIndex = 1;
             this.timerLabel.Text = "00:00:00";
             this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timerLabel_MouseDown);
             // 
             // label1
             // 
@@ -191,15 +176,47 @@ namespace MooveTeqBooking.Pages {
             this.label1.Text = "Vergangene Zeit";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // statusLabel
+            // 
+            this.statusLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Location = new System.Drawing.Point(159, 235);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(265, 86);
+            this.statusLabel.TabIndex = 1;
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.Image = global::MooveTeqBooking.Properties.Resources.exit_16px;
+            this.logoutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(65, 22);
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Image = global::MooveTeqBooking.Properties.Resources.user_16px;
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(92, 22);
+            this.usernameLabel.Text = "<Username>";
+            // 
             // BookByTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "BookByTime";
             this.Size = new System.Drawing.Size(583, 346);
+            this.Load += new System.EventHandler(this.BookByTime_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -226,5 +243,6 @@ namespace MooveTeqBooking.Pages {
         private System.Windows.Forms.Button startCounterButton;
         private System.Windows.Forms.Button stopCounterButton;
         private System.Windows.Forms.Label timerLabel;
+        private System.Windows.Forms.Label statusLabel;
     }
 }

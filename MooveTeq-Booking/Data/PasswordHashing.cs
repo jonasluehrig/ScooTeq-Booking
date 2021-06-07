@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace MooveTeqBooking.Data {
     internal class PasswordHashing {
         private const int SaltSize = 24; // size in bytes
-        private const int Iterations = 100000; // number of pbkdf2 iterations
+        private const int Iterations = 5000; // number of pbkdf2 iterations
 
         public static string GetPasswordHash(string cleartextPassword, byte[] existingSalt = null) {
             // Generate a salt
