@@ -207,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Booking.cs" />
+    <Compile Include="Data\Consts.cs" />
     <Compile Include="Data\Customer.cs" />
     <Compile Include="Data\DatabaseContext.cs" />
     <Compile Include="Data\DistanceChosenEventArgs.cs" />
@@ -225,9 +226,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20210607094432_BogusDataWithNewHash.cs" />
-    <Compile Include="Migrations\20210607094432_BogusDataWithNewHash.designer.cs">
-      <DependentUpon>20210607094432_BogusDataWithNewHash.cs</DependentUpon>
+    <Compile Include="Migrations\20210608135802_DatabaseMigration.cs" />
+    <Compile Include="Migrations\20210608135802_DatabaseMigration.designer.cs">
+      <DependentUpon>20210608135802_DatabaseMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
     <Compile Include="Pages\BookByDistance.cs">

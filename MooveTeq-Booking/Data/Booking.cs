@@ -12,7 +12,7 @@ namespace MooveTeqBooking.Data {
 
         public DateTime? EndTime { get; set; }
 
-        public int? TripDistance { get; set; }
+        public double? TripDistance { get; set; }
 
         public double TotalTripCost { get; set; }
 

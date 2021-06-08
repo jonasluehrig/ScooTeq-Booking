@@ -16,7 +16,8 @@ namespace MooveTeqBooking.Data {
         }
 
         public BookingType BillTripBy { get; set; }
-        public int? TotalDistance { get; set; }
+        public double? DrivenDistance { get; set; }
+        public double? TotalDistance { get; set; }
         public TimeSpan? TotalTime { get; set; }
         public DateTime TripStartTime { get; set; }
         public DateTime TripEndTime { get; set; }

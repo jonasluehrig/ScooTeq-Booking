@@ -32,7 +32,7 @@ namespace MooveTeqBooking.Pages {
 
             switch (_tripInformation.BillTripBy) {
                 case TripInformation.BookingType.ByTime:
-                    _totalCost = (Math.Ceiling(_tripInformation.TotalTime.Value.TotalMinutes) * 0.20) + 1;
+                    _totalCost = (Math.Ceiling(_tripInformation.TotalTime.Value.TotalMinutes) * Consts.CostPerMinuteInEuro) + Consts.BasePriceInEuro;
 
                     string timeText = string.Empty;
                     if (_tripInformation.TotalTime.Value.Hours > 0) {
@@ -69,6 +69,26 @@ namespace MooveTeqBooking.Pages {
 
                     break;
                 case TripInformation.BookingType.ByDistance:
+                    _totalCost = (_tripInformation.TotalDistance.Value * Consts.CostPerKilometerInEuro) + Consts.BasePriceInEuro;
+
+                    tripLengthLabel.Text = $"Du bist {_tripInformation.TotalDistance.Value}km gefahren.";
+                    tripTotalCostLabel.Text = $"{_totalCost.ToString("C", CultureInfo.CurrentCulture)}";
+
+                    _customer.Bookings.Add(new Booking() {
+                        StartTime = _tripInformation.TripStartTime,
+                        EndTime = _tripInformation.TripEndTime,
+                        TotalTripCost = _totalCost,
+                        TripDistance = _tripInformation.TotalDistance.Value
+                    });
+
+                    try {
+                        using (var db = new DatabaseContext()) {
+                            db.Update(_customer);
+                            await db.SaveChangesAsync();
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show(this, $"Ein unbekannter Datenbankfehler ist aufgetreten:\n\n{ex.InnerException.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                     break;
             }

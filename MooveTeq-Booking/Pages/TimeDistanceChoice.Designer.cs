@@ -25,16 +25,16 @@ namespace MooveTeqBooking.Pages {
         /// </summary>
         private void InitializeComponent() {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.logoutButton = new System.Windows.Forms.ToolStripButton();
+            this.adminMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.openUserManagementButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.usernameLabel = new System.Windows.Forms.ToolStripLabel();
             this.welcomeMessageLabel = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bookByTimeButton = new System.Windows.Forms.Button();
             this.bookByDistanceButton = new System.Windows.Forms.Button();
-            this.logoutButton = new System.Windows.Forms.ToolStripButton();
-            this.adminMenu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.openUserManagementButton = new System.Windows.Forms.ToolStripMenuItem();
-            this.usernameLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -54,11 +54,47 @@ namespace MooveTeqBooking.Pages {
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logoutButton.Image = global::MooveTeqBooking.Properties.Resources.exit_16px;
+            this.logoutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(65, 22);
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // adminMenu
+            // 
+            this.adminMenu.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.adminMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openUserManagementButton});
+            this.adminMenu.Image = global::MooveTeqBooking.Properties.Resources.user_shield_16px;
+            this.adminMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.adminMenu.Name = "adminMenu";
+            this.adminMenu.Size = new System.Drawing.Size(95, 22);
+            this.adminMenu.Text = "Verwaltung";
+            // 
+            // openUserManagementButton
+            // 
+            this.openUserManagementButton.Image = global::MooveTeqBooking.Properties.Resources.registration_16px;
+            this.openUserManagementButton.Name = "openUserManagementButton";
+            this.openUserManagementButton.Size = new System.Drawing.Size(179, 22);
+            this.openUserManagementButton.Text = "Benutzerverwaltung";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.usernameLabel.Image = global::MooveTeqBooking.Properties.Resources.user_16px;
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(92, 22);
+            this.usernameLabel.Text = "<Username>";
             // 
             // welcomeMessageLabel
             // 
@@ -112,42 +148,7 @@ namespace MooveTeqBooking.Pages {
             this.bookByDistanceButton.TabIndex = 1;
             this.bookByDistanceButton.Text = "Scooter nach fester Strecke buchen";
             this.bookByDistanceButton.UseVisualStyleBackColor = true;
-            // 
-            // logoutButton
-            // 
-            this.logoutButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.logoutButton.Image = global::MooveTeqBooking.Properties.Resources.exit_16px;
-            this.logoutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(65, 22);
-            this.logoutButton.Text = "Logout";
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
-            // adminMenu
-            // 
-            this.adminMenu.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.adminMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openUserManagementButton});
-            this.adminMenu.Image = global::MooveTeqBooking.Properties.Resources.user_shield_16px;
-            this.adminMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.adminMenu.Name = "adminMenu";
-            this.adminMenu.Size = new System.Drawing.Size(95, 22);
-            this.adminMenu.Text = "Verwaltung";
-            // 
-            // openUserManagementButton
-            // 
-            this.openUserManagementButton.Image = global::MooveTeqBooking.Properties.Resources.registration_16px;
-            this.openUserManagementButton.Name = "openUserManagementButton";
-            this.openUserManagementButton.Size = new System.Drawing.Size(179, 22);
-            this.openUserManagementButton.Text = "Benutzerverwaltung";
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.usernameLabel.Image = global::MooveTeqBooking.Properties.Resources.user_16px;
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(92, 22);
-            this.usernameLabel.Text = "<Username>";
+            this.bookByDistanceButton.Click += new System.EventHandler(this.bookByDistanceButton_Click);
             // 
             // TimeDistanceChoice
             // 

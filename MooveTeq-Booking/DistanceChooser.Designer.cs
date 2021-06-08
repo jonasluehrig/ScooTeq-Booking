@@ -31,12 +31,13 @@ namespace MooveTeqBooking {
             this.startAddressTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.totalDistanceTextbox = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.confirmChoiceButton = new System.Windows.Forms.Button();
             this.cancelChoiceButton = new System.Windows.Forms.Button();
+            this.totalDistanceNumbox = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalDistanceNumbox)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -103,7 +104,7 @@ namespace MooveTeqBooking {
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.totalDistanceTextbox);
+            this.groupBox2.Controls.Add(this.totalDistanceNumbox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(7, 149);
@@ -112,17 +113,6 @@ namespace MooveTeqBooking {
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "... oder direkt die Kilometeranzahl";
-            // 
-            // totalDistanceTextbox
-            // 
-            this.totalDistanceTextbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalDistanceTextbox.Location = new System.Drawing.Point(9, 22);
-            this.totalDistanceTextbox.Mask = "999";
-            this.totalDistanceTextbox.Name = "totalDistanceTextbox";
-            this.totalDistanceTextbox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.totalDistanceTextbox.Size = new System.Drawing.Size(154, 23);
-            this.totalDistanceTextbox.TabIndex = 4;
-            this.totalDistanceTextbox.ValidatingType = typeof(System.DateTime);
             // 
             // label3
             // 
@@ -136,6 +126,7 @@ namespace MooveTeqBooking {
             // 
             // confirmChoiceButton
             // 
+            this.confirmChoiceButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.confirmChoiceButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmChoiceButton.ForeColor = System.Drawing.Color.Green;
             this.confirmChoiceButton.Location = new System.Drawing.Point(233, 144);
@@ -148,6 +139,7 @@ namespace MooveTeqBooking {
             // 
             // cancelChoiceButton
             // 
+            this.cancelChoiceButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelChoiceButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelChoiceButton.ForeColor = System.Drawing.Color.Red;
             this.cancelChoiceButton.Location = new System.Drawing.Point(233, 175);
@@ -156,18 +148,44 @@ namespace MooveTeqBooking {
             this.cancelChoiceButton.TabIndex = 3;
             this.cancelChoiceButton.Text = "Abbrechen";
             this.cancelChoiceButton.UseVisualStyleBackColor = true;
-            this.cancelChoiceButton.Click += new System.EventHandler(this.cancelChoiceButton_Click);
+            // 
+            // totalDistanceNumbox
+            // 
+            this.totalDistanceNumbox.Location = new System.Drawing.Point(9, 22);
+            this.totalDistanceNumbox.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.totalDistanceNumbox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.totalDistanceNumbox.Name = "totalDistanceNumbox";
+            this.totalDistanceNumbox.Size = new System.Drawing.Size(154, 23);
+            this.totalDistanceNumbox.TabIndex = 2;
+            this.totalDistanceNumbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.totalDistanceNumbox.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.totalDistanceNumbox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // DistanceChooser
             // 
+            this.AcceptButton = this.confirmChoiceButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelChoiceButton;
             this.ClientSize = new System.Drawing.Size(347, 215);
+            this.ControlBox = false;
             this.Controls.Add(this.cancelChoiceButton);
             this.Controls.Add(this.confirmChoiceButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DistanceChooser";
@@ -177,6 +195,7 @@ namespace MooveTeqBooking {
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.totalDistanceNumbox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,6 +212,6 @@ namespace MooveTeqBooking {
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button confirmChoiceButton;
         private System.Windows.Forms.Button cancelChoiceButton;
-        private System.Windows.Forms.MaskedTextBox totalDistanceTextbox;
+        private System.Windows.Forms.NumericUpDown totalDistanceNumbox;
     }
 }

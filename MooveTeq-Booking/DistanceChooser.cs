@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace MooveTeqBooking {
     public partial class DistanceChooser : Form {
-        private EventHandler<DistanceChosenEventArgs> _callbackEvent;
+        public double ChosenDistance { get; internal set; }
 
-        public DistanceChooser(EventHandler<DistanceChosenEventArgs> callbackEvent) {
+        public DistanceChooser() {
             InitializeComponent();
-            _callbackEvent = callbackEvent;
         }
 
         private async void getMapsDistanceButton_Click(object sender, EventArgs e) {
@@ -28,7 +27,7 @@ namespace MooveTeqBooking {
             try {
                 var distance = await Data.MapsApi.GetDistanceBetweenTwoAddresses(startAddressTextbox.Text, stopAddressTextbox.Text);
 
-                totalDistanceTextbox.Text = Math.Round((double)distance / 1000).ToString();
+                totalDistanceNumbox.Value = (decimal) Math.Round((double)distance / 1000);
             } catch (Exception ex) {
                 if (ex.Message == "NOT_FOUND" || ex.Message == "ZERO_REULTS") {
                     MessageBox.Show(
@@ -52,24 +51,8 @@ namespace MooveTeqBooking {
             this.Cursor = Cursors.Default;
         }
 
-        private void cancelChoiceButton_Click(object sender, EventArgs e) {
-            Close();
-        }
-
         private void confirmChoiceButton_Click(object sender, EventArgs e) {
-            if (!(_callbackEvent is null)) {
-                _ = Task.Run(() => {
-                    _callbackEvent(
-                        this,
-                        new DistanceChosenEventArgs(
-                            false,
-                            float.Parse(totalDistanceTextbox.Text)
-                        )
-                    );
-                });
-            }
-
-            Close();
+            ChosenDistance = (double) totalDistanceNumbox.Value;
         }
     }
 }
