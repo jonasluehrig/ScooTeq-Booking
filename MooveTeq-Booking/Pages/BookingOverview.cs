@@ -32,7 +32,7 @@ namespace MooveTeqBooking.Pages {
 
             switch (_tripInformation.BillTripBy) {
                 case TripInformation.BookingType.ByTime:
-                    _totalCost = Math.Ceiling(_tripInformation.TotalTime.Value.TotalMinutes) * 0.20 + 1;
+                    _totalCost = (Math.Ceiling(_tripInformation.TotalTime.Value.TotalMinutes) * 0.20) + 1;
 
                     string timeText = string.Empty;
                     if (_tripInformation.TotalTime.Value.Hours > 0) {

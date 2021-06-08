@@ -40,6 +40,9 @@
     <Reference Include="Bogus, Version=33.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
       <HintPath>..\packages\Bogus.33.0.2\lib\net40\Bogus.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleMapsApi, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleMapsApi.0.80.0\lib\net40\GoogleMapsApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -206,8 +209,16 @@
     <Compile Include="Data\Booking.cs" />
     <Compile Include="Data\Customer.cs" />
     <Compile Include="Data\DatabaseContext.cs" />
+    <Compile Include="Data\DistanceChosenEventArgs.cs" />
+    <Compile Include="Data\MapsApi.cs" />
     <Compile Include="Data\PasswordHashing.cs" />
     <Compile Include="Data\TripInformation.cs" />
+    <Compile Include="DistanceChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistanceChooser.Designer.cs">
+      <DependentUpon>DistanceChooser.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +230,12 @@
       <DependentUpon>20210607094432_BogusDataWithNewHash.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
+    <Compile Include="Pages\BookByDistance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\BookByDistance.Designer.cs">
+      <DependentUpon>BookByDistance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BookByTime.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,8 +268,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DistanceChooser.resx">
+      <DependentUpon>DistanceChooser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\BookByDistance.resx">
+      <DependentUpon>BookByDistance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\BookByTime.resx">
       <DependentUpon>BookByTime.cs</DependentUpon>

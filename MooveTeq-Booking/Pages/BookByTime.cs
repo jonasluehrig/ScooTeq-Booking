@@ -26,6 +26,7 @@ namespace MooveTeqBooking.Pages {
         private void BookByTime_Load(object sender, EventArgs e) {
             usernameLabel.Text = _customer.UserName;
             welcomeMessageLabel.Text = $"Gute Fahrt, {_customer.FirstName} {_customer.LastName}!";
+            statusLabel.Text = "Drücke Start um die Fahrt zu beginnen.";
 
             timerLabel.MouseWheel += new MouseEventHandler((object _sender, MouseEventArgs _e) => {
                 System.Diagnostics.Debug.Print(_e.Delta.ToString());

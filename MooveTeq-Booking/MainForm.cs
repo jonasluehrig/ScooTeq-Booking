@@ -22,5 +22,9 @@ namespace MooveTeqBooking {
             ClientSize = nextControl.Size;
             Text = nextControl.Text;
         }
+
+        private void button1_Click(object sender, System.EventArgs e) {
+            new DistanceChooser(null).Show();
+        }
     }
 }
