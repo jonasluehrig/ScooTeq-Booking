@@ -11,8 +11,8 @@ using MooveTeqBooking.Data;
 
 namespace MooveTeqBooking.Pages {
     public partial class BookByDistance : UserControl {
-        private MainForm _parent;
-        private Customer _customer;
+        private readonly MainForm _parent;
+        private readonly Customer _customer;
         private DateTime _tripStartTime;
         private double _totalAvailableDistance;
         private double _drivenDistance = 0F;

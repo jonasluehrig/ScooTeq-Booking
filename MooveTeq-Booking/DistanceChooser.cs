@@ -22,6 +22,8 @@ namespace MooveTeqBooking {
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+                this.Cursor = Cursors.Default;
+                return;
             }
 
             try {
