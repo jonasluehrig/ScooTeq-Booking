@@ -7,8 +7,8 @@ namespace MooveTeqBooking.Data {
             ChosenDistance = chosenDistance;
         }
 
-        public bool Cancelled { get; internal set; }
+        private bool Cancelled { get; set; }
 
-        public double ChosenDistance { get; internal set; }
+        private double ChosenDistance { get; set; }
     }
 }

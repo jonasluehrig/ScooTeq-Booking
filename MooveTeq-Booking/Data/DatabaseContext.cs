@@ -49,8 +49,7 @@ namespace MooveTeqBooking.Data
                         LastName = "Admin",
                         PasswordHash = PasswordHashing.GetPasswordHash("admin"),
                         IsAdmin = true
-                    }
-                );
+                    });
 
             builder
                 .Entity<Customer>()
