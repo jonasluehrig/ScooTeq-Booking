@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using GoogleMapsApi;
-using GoogleMapsApi.Entities.Common;
 using GoogleMapsApi.Entities.Directions.Request;
 using GoogleMapsApi.Entities.Directions.Response;
+using static GoogleMapsApi.GoogleMaps;
 
 namespace MooveTeqBooking.Data {
-    class MapsApi {
+    internal static class MapsApi {
         /// <summary>
         /// Returns the distance in meters between two physical places or addresses.
         /// </summary>
@@ -25,9 +22,10 @@ namespace MooveTeqBooking.Data {
                 ApiKey = "AIzaSyCtdj4v-sr8-8x9-qtoOTSyKU9KFq8Vao8"
             };
 
-            var directions = await GoogleMaps.Directions.QueryAsync(directionsRequest);
+            // ReSharper disable once PossibleNullReferenceException
+            var directions = await Directions?.QueryAsync(directionsRequest);
 
-            if (directions.Status != DirectionsStatusCodes.OK) {
+            if (directions != null && directions.Status != DirectionsStatusCodes.OK) {
                 throw new Exception(directions.Status.ToString());
             }
 

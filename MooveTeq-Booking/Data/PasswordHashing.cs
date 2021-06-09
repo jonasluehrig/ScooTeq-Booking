@@ -3,13 +3,13 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
 namespace MooveTeqBooking.Data {
-    internal class PasswordHashing {
+    internal static class PasswordHashing {
         private const int SaltSize = 24; // size in bytes
         private const int Iterations = 5000; // number of pbkdf2 iterations
 
         public static string GetPasswordHash(string cleartextPassword, byte[] existingSalt = null) {
             // Generate a salt
-            var salt = new byte[SaltSize];
+            byte[] salt;
             if (existingSalt is null) {
                 var provider = new RNGCryptoServiceProvider();
                 salt = new byte[SaltSize];
@@ -24,9 +24,12 @@ namespace MooveTeqBooking.Data {
             return Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(pbkdf2.GetBytes(64));
         }
 
-        public static bool TestPasswordAgainstHash(string cleartextPassword, string hash) {
+        public static bool TestPasswordAgainstHash(string cleartextPassword, string hash)
+        {
+            _ = hash ?? throw new ArgumentNullException(nameof(hash));
+
             var matches = Regex.Match(hash, @"^([A-Za-z0-9+=/]+):([A-Za-z0-9+=/]+)$");
-            byte[] salt = Convert.FromBase64String(matches.Groups[1].Value);
+            var salt = Convert.FromBase64String(matches.Groups[1].Value);
 
             var hashedPassword = GetPasswordHash(cleartextPassword, salt);
 
