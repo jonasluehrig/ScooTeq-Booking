@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Bogus;
 
 namespace MooveTeqBooking.Data
@@ -8,11 +9,14 @@ namespace MooveTeqBooking.Data
 
         public DbSet<Booking> Bookings { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options) {
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            _ = options ?? throw new ArgumentNullException(nameof(options));
             options.UseSqlite($"Data Source=Customers.sqlite");
         }
 
-        protected override void OnModelCreating(ModelBuilder builder) {
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
             builder.Entity<Customer>()
                 .HasIndex(c => c.UserName)
                 .IsUnique();
