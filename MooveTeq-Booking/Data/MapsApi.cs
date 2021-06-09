@@ -23,7 +23,7 @@ namespace MooveTeqBooking.Data {
             };
 
             // ReSharper disable once PossibleNullReferenceException
-            var directions = await Directions?.QueryAsync(directionsRequest);
+            var directions = await Directions.QueryAsync(directionsRequest);
 
             if (directions != null && directions.Status != DirectionsStatusCodes.OK) {
                 throw new Exception(directions.Status.ToString());

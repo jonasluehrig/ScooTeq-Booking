@@ -31,7 +31,7 @@ namespace MooveTeqBooking {
 
                 totalDistanceNumbox.Value = (decimal) Math.Round((double)distance / 1000);
             } catch (Exception ex) {
-                if (ex.Message == "NOT_FOUND" || ex.Message == "ZERO_REULTS") {
+                if (ex.Message == "NOT_FOUND" || ex.Message == "ZERO_RESULTS") {
                     MessageBox.Show(
                         this,
                         "Mindestens eine der angegebenen Adressen wurde nicht gefunden.",

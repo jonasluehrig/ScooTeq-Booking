@@ -31,10 +31,10 @@ namespace MooveTeqBooking {
             this.startAddressTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.totalDistanceNumbox = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.confirmChoiceButton = new System.Windows.Forms.Button();
             this.cancelChoiceButton = new System.Windows.Forms.Button();
-            this.totalDistanceNumbox = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalDistanceNumbox)).BeginInit();
@@ -114,6 +114,30 @@ namespace MooveTeqBooking {
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "... oder direkt die Kilometeranzahl";
             // 
+            // totalDistanceNumbox
+            // 
+            this.totalDistanceNumbox.Location = new System.Drawing.Point(9, 22);
+            this.totalDistanceNumbox.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.totalDistanceNumbox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.totalDistanceNumbox.Name = "totalDistanceNumbox";
+            this.totalDistanceNumbox.Size = new System.Drawing.Size(154, 23);
+            this.totalDistanceNumbox.TabIndex = 2;
+            this.totalDistanceNumbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.totalDistanceNumbox.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.totalDistanceNumbox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -148,30 +172,6 @@ namespace MooveTeqBooking {
             this.cancelChoiceButton.TabIndex = 3;
             this.cancelChoiceButton.Text = "Abbrechen";
             this.cancelChoiceButton.UseVisualStyleBackColor = true;
-            // 
-            // totalDistanceNumbox
-            // 
-            this.totalDistanceNumbox.Location = new System.Drawing.Point(9, 22);
-            this.totalDistanceNumbox.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.totalDistanceNumbox.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.totalDistanceNumbox.Name = "totalDistanceNumbox";
-            this.totalDistanceNumbox.Size = new System.Drawing.Size(154, 23);
-            this.totalDistanceNumbox.TabIndex = 2;
-            this.totalDistanceNumbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.totalDistanceNumbox.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
-            this.totalDistanceNumbox.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // DistanceChooser
             // 
