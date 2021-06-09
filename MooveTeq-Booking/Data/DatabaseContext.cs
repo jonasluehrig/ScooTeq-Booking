@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore;
 using Bogus;
+using Microsoft.EntityFrameworkCore;
 
 namespace MooveTeqBooking.Data
 {
@@ -17,12 +17,14 @@ namespace MooveTeqBooking.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Customer>()
-                .HasIndex(c => c.UserName)
-                .IsUnique();
+            _ = builder ?? throw new ArgumentNullException(nameof(builder));
 
             builder.Entity<Customer>()
-                .Property(c => c.UserName)
+                ?.HasIndex(c => c.UserName)
+                ?.IsUnique();
+
+            (builder.Entity<Customer>()
+                    ?.Property(c => c.UserName) ?? throw new InvalidOperationException())
                 .HasColumnType("TEXT COLLATE NOCASE");
 
             var testUserPasswordHash = PasswordHashing.GetPasswordHash("password");
@@ -30,16 +32,16 @@ namespace MooveTeqBooking.Data
             var customerId = 2;
             var testUsers = new Faker<Data.Customer>()
                 .RuleFor(x => x.CustomerId, f => customerId++)
-                .RuleFor(x => x.FirstName, f => f.Person.FirstName)
-                .RuleFor(x => x.LastName, f => f.Person.LastName)
-                .RuleFor(x => x.UserName, f => f.Person.UserName)
-                .RuleFor(x => x.PasswordHash, f => testUserPasswordHash);
+                ?.RuleFor(x => x.FirstName, f => f?.Person?.FirstName)
+                ?.RuleFor(x => x.LastName, f => f?.Person?.LastName)
+                ?.RuleFor(x => x.UserName, f => f?.Person?.UserName)
+                ?.RuleFor(x => x.PasswordHash, f => testUserPasswordHash);
 
-            var z = testUsers.Generate(100);
+            var z = testUsers?.Generate(100);
 
             builder
                 .Entity<Customer>()
-                .HasData(
+                ?.HasData(
                     new Data.Customer() {
                         CustomerId = 1,
                         UserName = "admin",
@@ -52,7 +54,7 @@ namespace MooveTeqBooking.Data
 
             builder
                 .Entity<Customer>()
-                .HasData(z);
+                ?.HasData(z ?? throw new InvalidOperationException());
         }
     }
 }
