@@ -26,7 +26,10 @@ namespace MooveTeqBooking.Data {
 
         public static bool TestPasswordAgainstHash(string cleartextPassword, string hash)
         {
-            _ = hash ?? throw new ArgumentNullException(nameof(hash));
+            if (string.IsNullOrEmpty(hash))
+            {
+                return false;
+            }
 
             var matches = Regex.Match(hash, @"^([A-Za-z0-9+=/]+):([A-Za-z0-9+=/]+)$");
             var salt = Convert.FromBase64String(matches.Groups[1].Value);
