@@ -79,8 +79,9 @@ namespace MooveTeqBooking.Pages {
             // 
             this.openUserManagementButton.Image = global::MooveTeqBooking.Properties.Resources.registration_16px;
             this.openUserManagementButton.Name = "openUserManagementButton";
-            this.openUserManagementButton.Size = new System.Drawing.Size(179, 22);
+            this.openUserManagementButton.Size = new System.Drawing.Size(180, 22);
             this.openUserManagementButton.Text = "Benutzerverwaltung";
+            this.openUserManagementButton.Click += new System.EventHandler(this.openUserManagementButton_Click);
             // 
             // toolStripSeparator1
             // 

@@ -14,6 +14,6 @@ namespace MooveTeqBooking.Data {
 
         public bool IsAdmin { get; set; }
 
-        public List<Booking> Bookings { get; } = new List<Booking>();
+        public virtual List<Booking> Bookings { get; } = new List<Booking>();
     }
 }
