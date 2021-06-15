@@ -1,5 +1,5 @@
 ﻿
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     partial class LoginOrRegister {
         /// <summary> 
         /// Erforderliche Designervariable.

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     public partial class PaymentProcessing : Form {
         Data.Customer _customer;
         double _price;

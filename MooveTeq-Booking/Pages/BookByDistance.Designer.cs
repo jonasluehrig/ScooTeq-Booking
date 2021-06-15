@@ -1,5 +1,5 @@
 ﻿
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     partial class BookByDistance {
         /// <summary> 
         /// Erforderliche Designervariable.
@@ -204,7 +204,7 @@ namespace MooveTeqBooking.Pages {
             // 
             this.logoutButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.logoutButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutButton.Image = global::MooveTeqBooking.Properties.Resources.exit_16px;
+            this.logoutButton.Image = global::ScooTeqBooking.Properties.Resources.exit_16px;
             this.logoutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(65, 22);
@@ -221,7 +221,7 @@ namespace MooveTeqBooking.Pages {
             // 
             this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Image = global::MooveTeqBooking.Properties.Resources.user_16px;
+            this.usernameLabel.Image = global::ScooTeqBooking.Properties.Resources.user_16px;
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(92, 22);
             this.usernameLabel.Text = "<Username>";

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     internal static class Program {
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.

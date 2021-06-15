@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using MooveTeqBooking.Data;
+using ScooTeqBooking.Data;
 using System.Threading.Tasks;
 
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     public partial class DistanceChooser : Form {
         public double ChosenDistance { get; internal set; }
 

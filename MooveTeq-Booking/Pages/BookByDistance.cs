@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MooveTeqBooking.Data;
+using ScooTeqBooking.Data;
 
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     public partial class BookByDistance : UserControl {
         private readonly MainForm _parent;
         private readonly Customer _customer;

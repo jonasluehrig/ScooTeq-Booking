@@ -1,5 +1,5 @@
 ﻿
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     partial class UserManagement {
         /// <summary>
         /// Required designer variable.
@@ -115,7 +115,7 @@ namespace MooveTeqBooking {
             // 
             // editUserButton
             // 
-            this.editUserButton.Image = global::MooveTeqBooking.Properties.Resources.registration_16px1;
+            this.editUserButton.Image = global::ScooTeqBooking.Properties.Resources.registration_16px1;
             this.editUserButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.editUserButton.Name = "editUserButton";
             this.editUserButton.Size = new System.Drawing.Size(132, 22);
@@ -125,7 +125,7 @@ namespace MooveTeqBooking {
             // closeButton
             // 
             this.closeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.closeButton.Image = global::MooveTeqBooking.Properties.Resources.delete_16px;
+            this.closeButton.Image = global::ScooTeqBooking.Properties.Resources.delete_16px;
             this.closeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(78, 22);
@@ -134,7 +134,7 @@ namespace MooveTeqBooking {
             // 
             // deleteUserButton
             // 
-            this.deleteUserButton.Image = global::MooveTeqBooking.Properties.Resources.trash_16px;
+            this.deleteUserButton.Image = global::ScooTeqBooking.Properties.Resources.trash_16px;
             this.deleteUserButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteUserButton.Name = "deleteUserButton";
             this.deleteUserButton.Size = new System.Drawing.Size(117, 22);

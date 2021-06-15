@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MooveTeqBooking.Data;
+using ScooTeqBooking.Data;
 
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     public partial class UserEditor : Form {
         public Customer EditedCustomer { get; internal set; }
         

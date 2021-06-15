@@ -1,9 +1,9 @@
-﻿using MooveTeqBooking.Data;
+﻿using ScooTeqBooking.Data;
 using System.Windows.Forms;
 using System.Drawing;
 using System;
 
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     public partial class BookByTime : UserControl {
         MainForm _parent;
         Customer _customer;

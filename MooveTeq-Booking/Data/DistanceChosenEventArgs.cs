@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MooveTeqBooking.Data {
+namespace ScooTeqBooking.Data {
     public class DistanceChosenEventArgs : EventArgs {
         public DistanceChosenEventArgs(bool cancelled, double chosenDistance = 0) {
             Cancelled = cancelled;

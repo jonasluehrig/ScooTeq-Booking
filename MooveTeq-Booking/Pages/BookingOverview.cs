@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MooveTeqBooking.Data;
+using ScooTeqBooking.Data;
 
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     public partial class BookingOverview : UserControl {
         MainForm _parent;
         Customer _customer;

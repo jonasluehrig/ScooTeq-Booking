@@ -1,5 +1,5 @@
 ﻿
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     partial class TimeDistanceChoice {
         /// <summary> 
         /// Erforderliche Designervariable.
@@ -57,7 +57,7 @@ namespace MooveTeqBooking.Pages {
             // logoutButton
             // 
             this.logoutButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.logoutButton.Image = global::MooveTeqBooking.Properties.Resources.exit_16px;
+            this.logoutButton.Image = global::ScooTeqBooking.Properties.Resources.exit_16px;
             this.logoutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(65, 22);
@@ -69,7 +69,7 @@ namespace MooveTeqBooking.Pages {
             this.adminMenu.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.adminMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openUserManagementButton});
-            this.adminMenu.Image = global::MooveTeqBooking.Properties.Resources.user_shield_16px;
+            this.adminMenu.Image = global::ScooTeqBooking.Properties.Resources.user_shield_16px;
             this.adminMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.adminMenu.Name = "adminMenu";
             this.adminMenu.Size = new System.Drawing.Size(95, 22);
@@ -77,7 +77,7 @@ namespace MooveTeqBooking.Pages {
             // 
             // openUserManagementButton
             // 
-            this.openUserManagementButton.Image = global::MooveTeqBooking.Properties.Resources.registration_16px;
+            this.openUserManagementButton.Image = global::ScooTeqBooking.Properties.Resources.registration_16px;
             this.openUserManagementButton.Name = "openUserManagementButton";
             this.openUserManagementButton.Size = new System.Drawing.Size(180, 22);
             this.openUserManagementButton.Text = "Benutzerverwaltung";
@@ -92,7 +92,7 @@ namespace MooveTeqBooking.Pages {
             // usernameLabel
             // 
             this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.usernameLabel.Image = global::MooveTeqBooking.Properties.Resources.user_16px;
+            this.usernameLabel.Image = global::ScooTeqBooking.Properties.Resources.user_16px;
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(92, 22);
             this.usernameLabel.Text = "<Username>";

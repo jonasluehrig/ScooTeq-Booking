@@ -1,5 +1,5 @@
 ﻿
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     partial class BookingOverview {
         /// <summary> 
         /// Erforderliche Designervariable.
@@ -163,7 +163,7 @@ namespace MooveTeqBooking.Pages {
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MooveTeqBooking.Properties.Resources.ezgif_2_11bc2ebf0339;
+            this.pictureBox1.Image = global::ScooTeqBooking.Properties.Resources.ezgif_2_11bc2ebf0339;
             this.pictureBox1.Location = new System.Drawing.Point(5, 45);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
@@ -176,7 +176,7 @@ namespace MooveTeqBooking.Pages {
             // 
             this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Image = global::MooveTeqBooking.Properties.Resources.user_16px;
+            this.usernameLabel.Image = global::ScooTeqBooking.Properties.Resources.user_16px;
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(92, 22);
             this.usernameLabel.Text = "<Username>";

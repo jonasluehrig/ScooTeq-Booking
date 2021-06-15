@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
-namespace MooveTeqBooking.Data {
+namespace ScooTeqBooking.Data {
     internal static class PasswordHashing {
         private const int SaltSize = 24; // size in bytes
         private const int Iterations = 5000; // number of pbkdf2 iterations

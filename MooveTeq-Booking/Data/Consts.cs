@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MooveTeqBooking.Data {
+namespace ScooTeqBooking.Data {
     public static class Consts {
         public const double AverageScooterSpeedInKm = 25.000;
         public const double CostPerMinuteInEuro = 0.20;

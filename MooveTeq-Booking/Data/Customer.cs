@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MooveTeqBooking.Data {
+namespace ScooTeqBooking.Data {
     public class Customer {
         public int CustomerId { get; set; }
 

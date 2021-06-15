@@ -1,5 +1,5 @@
 ﻿
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     partial class UserEditor {
         /// <summary>
         /// Required designer variable.

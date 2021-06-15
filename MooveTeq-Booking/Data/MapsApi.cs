@@ -5,7 +5,7 @@ using GoogleMapsApi.Entities.Directions.Request;
 using GoogleMapsApi.Entities.Directions.Response;
 using static GoogleMapsApi.GoogleMaps;
 
-namespace MooveTeqBooking.Data {
+namespace ScooTeqBooking.Data {
     internal static class MapsApi {
         /// <summary>
         /// Returns the distance in meters between two physical places or addresses.

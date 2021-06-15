@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MooveTeqBooking.Data;
+using ScooTeqBooking.Data;
 
-namespace MooveTeqBooking.Migrations
+namespace ScooTeqBooking.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
     [Migration("20210608135802_DatabaseMigration")]

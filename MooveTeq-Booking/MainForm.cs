@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.Windows.Forms;
 
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();

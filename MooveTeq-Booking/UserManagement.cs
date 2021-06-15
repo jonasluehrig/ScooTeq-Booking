@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     public partial class UserManagement : Form {
         private EventHandler _onClosingCallback;
 

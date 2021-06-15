@@ -1,5 +1,5 @@
 ﻿
-namespace MooveTeqBooking {
+namespace ScooTeqBooking {
     partial class PaymentProcessing {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@ namespace MooveTeqBooking {
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::MooveTeqBooking.Properties.Resources.ScooTec3;
+            this.pictureBox1.Image = global::ScooTeqBooking.Properties.Resources.ScooTec3;
             this.pictureBox1.Location = new System.Drawing.Point(72, 99);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(181, 121);
@@ -66,7 +66,7 @@ namespace MooveTeqBooking {
             // processPaymentButton
             // 
             this.processPaymentButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.processPaymentButton.Image = global::MooveTeqBooking.Properties.Resources.paper_money_16px;
+            this.processPaymentButton.Image = global::ScooTeqBooking.Properties.Resources.paper_money_16px;
             this.processPaymentButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.processPaymentButton.Location = new System.Drawing.Point(12, 377);
             this.processPaymentButton.Name = "processPaymentButton";

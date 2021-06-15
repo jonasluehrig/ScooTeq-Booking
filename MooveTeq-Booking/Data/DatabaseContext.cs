@@ -2,7 +2,7 @@
 using Bogus;
 using Microsoft.EntityFrameworkCore;
 
-namespace MooveTeqBooking.Data
+namespace ScooTeqBooking.Data
 {
     public class DatabaseContext : DbContext {
         public DbSet<Customer> Customers { get; set; }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MooveTeqBooking.Properties {
+namespace ScooTeqBooking.Properties {
     using System;
     
     

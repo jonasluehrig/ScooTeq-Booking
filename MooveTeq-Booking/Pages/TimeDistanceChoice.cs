@@ -1,8 +1,8 @@
 ﻿using System;
-using MooveTeqBooking.Data;
+using ScooTeqBooking.Data;
 using System.Windows.Forms;
 
-namespace MooveTeqBooking.Pages {
+namespace ScooTeqBooking.Pages {
     public partial class TimeDistanceChoice : UserControl {
         private MainForm _parent;
         private Customer _customer;

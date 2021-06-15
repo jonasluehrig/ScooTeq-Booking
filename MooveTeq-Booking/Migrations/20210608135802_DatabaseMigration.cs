@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MooveTeqBooking.Migrations
+namespace ScooTeqBooking.Migrations
 {
     public partial class DatabaseMigration : Migration
     {

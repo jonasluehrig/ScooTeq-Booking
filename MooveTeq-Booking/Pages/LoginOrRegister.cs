@@ -1,11 +1,11 @@
 ﻿using Microsoft.Data.Sqlite;
-using MooveTeqBooking.Data;
+using ScooTeqBooking.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MooveTeqBooking.Pages
+namespace ScooTeqBooking.Pages
 {
     public partial class LoginOrRegister : UserControl {
         private readonly MainForm parent;

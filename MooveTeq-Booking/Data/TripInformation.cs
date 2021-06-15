@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MooveTeqBooking.Data {
+namespace ScooTeqBooking.Data {
     public class TripInformation {
 
         /// <summary>
