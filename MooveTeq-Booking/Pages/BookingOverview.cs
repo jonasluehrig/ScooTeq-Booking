@@ -69,16 +69,16 @@ namespace ScooTeqBooking.Pages {
 
                     break;
                 case TripInformation.BookingType.ByDistance:
-                    _totalCost = (_tripInformation.TotalDistance.Value * Consts.CostPerKilometerInEuro) + Consts.BasePriceInEuro;
+                    _totalCost = (_tripInformation.DrivenDistance.Value * Consts.CostPerKilometerInEuro) + Consts.BasePriceInEuro;
 
-                    tripLengthLabel.Text = $"Du bist {_tripInformation.TotalDistance.Value}km gefahren.";
+                    tripLengthLabel.Text = $"Du bist {Math.Round(_tripInformation.DrivenDistance.Value,3)}km gefahren.";
                     tripTotalCostLabel.Text = $"{_totalCost.ToString("C", CultureInfo.CurrentCulture)}";
 
                     _customer.Bookings.Add(new Booking() {
                         StartTime = _tripInformation.TripStartTime,
                         EndTime = _tripInformation.TripEndTime,
                         TotalTripCost = _totalCost,
-                        TripDistance = _tripInformation.TotalDistance.Value
+                        TripDistance = _tripInformation.DrivenDistance.Value
                     });
 
                     try {
@@ -96,6 +96,7 @@ namespace ScooTeqBooking.Pages {
 
         private void payAndCloseButton_Click(object sender, EventArgs e) {
             new PaymentProcessing(_customer, _totalCost).ShowDialog();
+            _parent.DisallowClosing = false;
             _parent.ChangeView(new TimeDistanceChoice(_parent, _customer));
         }
     }

@@ -24,6 +24,7 @@ namespace ScooTeqBooking {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagement));
             this.customerListView = new System.Windows.Forms.ListView();
             this.usernameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.firstnameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -115,7 +116,7 @@ namespace ScooTeqBooking {
             // 
             // editUserButton
             // 
-            this.editUserButton.Image = global::ScooTeqBooking.Properties.Resources.registration_16px1;
+            this.editUserButton.Image = global::ScooTeqBooking.Properties.Resources.registration_16px;
             this.editUserButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.editUserButton.Name = "editUserButton";
             this.editUserButton.Size = new System.Drawing.Size(132, 22);
@@ -148,8 +149,9 @@ namespace ScooTeqBooking {
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.customerListView);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserManagement";
-            this.Text = "Benutzerverwaltung";
+            this.Text = "ScooTeq - Kunden/Benutzerverwaltung";
             this.Load += new System.EventHandler(this.Form_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

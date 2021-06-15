@@ -25,8 +25,10 @@ namespace ScooTeqBooking.Pages {
         /// </summary>
         private void InitializeComponent() {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.usernameLabel = new System.Windows.Forms.ToolStripLabel();
             this.welcomeMessageLabel = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.payAndCloseButton = new System.Windows.Forms.Button();
@@ -34,13 +36,11 @@ namespace ScooTeqBooking.Pages {
             this.label4 = new System.Windows.Forms.Label();
             this.tripLengthLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.usernameLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -53,6 +53,15 @@ namespace ScooTeqBooking.Pages {
             this.toolStrip1.Size = new System.Drawing.Size(583, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Image = global::ScooTeqBooking.Properties.Resources.user_16px;
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(92, 22);
+            this.usernameLabel.Text = "<Username>";
             // 
             // welcomeMessageLabel
             // 
@@ -79,6 +88,18 @@ namespace ScooTeqBooking.Pages {
             this.tableLayoutPanel1.Size = new System.Drawing.Size(583, 321);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::ScooTeqBooking.Properties.Resources.ezgif_2_11bc2ebf0339;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 44);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 233);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
@@ -87,7 +108,7 @@ namespace ScooTeqBooking.Pages {
             this.panel1.Controls.Add(this.tripLengthLabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(150, 40);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 241);
             this.panel1.TabIndex = 0;
@@ -160,27 +181,6 @@ namespace ScooTeqBooking.Pages {
             this.label1.Text = "Vielen Dank für deine heutige Fahrt!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ScooTeqBooking.Properties.Resources.ezgif_2_11bc2ebf0339;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 231);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Image = global::ScooTeqBooking.Properties.Resources.user_16px;
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(92, 22);
-            this.usernameLabel.Text = "<Username>";
-            // 
             // BookingOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -195,9 +195,9 @@ namespace ScooTeqBooking.Pages {
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,7 +35,11 @@ namespace ScooTeqBooking.Pages {
         }
 
         private void timer_Tick(object sender, EventArgs e) {
-            timerLabel.Text = (DateTime.Now - _startTime - _totalPauseTime).ToString("hh':'mm':'ss");
+            var tripTime = DateTime.Now - _startTime - _totalPauseTime;
+            var minuteTime = Math.Ceiling(tripTime.TotalMinutes) * Consts.CostPerMinuteInEuro + Consts.BasePriceInEuro;
+
+            timerLabel.Text = tripTime.ToString("hh':'mm':'ss");
+            timerLabel.Text += $"\n({minuteTime.ToString("0.00")}€)";
         }
 
         private void startCounterButton_Click(object sender, EventArgs e) {
@@ -51,6 +55,8 @@ namespace ScooTeqBooking.Pages {
             startCounterButton.ForeColor = Color.Orange;
             startCounterButton.Click -= startCounterButton_Click;
             startCounterButton.Click += pauseCounterButton_Click;
+
+            _parent.DisallowClosing = true;
         }
 
         private void pauseCounterButton_Click(object sender, EventArgs e) {

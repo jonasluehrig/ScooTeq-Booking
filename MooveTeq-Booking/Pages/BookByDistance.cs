@@ -61,6 +61,8 @@ namespace ScooTeqBooking.Pages {
             startCounterButton.Enabled = false;
             stopCounterButton.Enabled = true;
             logoutButton.Enabled = false;
+
+            _parent.DisallowClosing = true;
         }
 
         private void stopCounterButton_Click(object sender, EventArgs e) {

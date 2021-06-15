@@ -73,6 +73,7 @@ namespace ScooTeqBooking.Pages {
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -94,9 +95,9 @@ namespace ScooTeqBooking.Pages {
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(159, 88);
+            this.panel1.Location = new System.Drawing.Point(159, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 144);
+            this.panel1.Size = new System.Drawing.Size(265, 174);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -107,11 +108,11 @@ namespace ScooTeqBooking.Pages {
             this.tableLayoutPanel2.Controls.Add(this.startCounterButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.stopCounterButton, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 81);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 120);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(265, 63);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(265, 54);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // startCounterButton
@@ -121,7 +122,7 @@ namespace ScooTeqBooking.Pages {
             this.startCounterButton.ForeColor = System.Drawing.Color.Green;
             this.startCounterButton.Location = new System.Drawing.Point(3, 3);
             this.startCounterButton.Name = "startCounterButton";
-            this.startCounterButton.Size = new System.Drawing.Size(126, 57);
+            this.startCounterButton.Size = new System.Drawing.Size(126, 48);
             this.startCounterButton.TabIndex = 0;
             this.startCounterButton.Text = "Start";
             this.startCounterButton.UseVisualStyleBackColor = true;
@@ -135,7 +136,7 @@ namespace ScooTeqBooking.Pages {
             this.stopCounterButton.ForeColor = System.Drawing.Color.Red;
             this.stopCounterButton.Location = new System.Drawing.Point(135, 3);
             this.stopCounterButton.Name = "stopCounterButton";
-            this.stopCounterButton.Size = new System.Drawing.Size(127, 57);
+            this.stopCounterButton.Size = new System.Drawing.Size(127, 48);
             this.stopCounterButton.TabIndex = 1;
             this.stopCounterButton.Text = "Stop";
             this.stopCounterButton.UseVisualStyleBackColor = true;
@@ -147,7 +148,7 @@ namespace ScooTeqBooking.Pages {
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(265, 47);
+            this.panel2.Size = new System.Drawing.Size(265, 86);
             this.panel2.TabIndex = 1;
             // 
             // timerLabel
@@ -159,9 +160,9 @@ namespace ScooTeqBooking.Pages {
             this.timerLabel.Margin = new System.Windows.Forms.Padding(0);
             this.timerLabel.Name = "timerLabel";
             this.timerLabel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.timerLabel.Size = new System.Drawing.Size(265, 47);
+            this.timerLabel.Size = new System.Drawing.Size(265, 86);
             this.timerLabel.TabIndex = 1;
-            this.timerLabel.Text = "00:00:00";
+            this.timerLabel.Text = "00:00:00\r\n(0,00€)";
             this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.timerLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.timerLabel_MouseDown);
             // 
@@ -180,9 +181,9 @@ namespace ScooTeqBooking.Pages {
             // 
             this.statusLabel.Dock = System.Windows.Forms.DockStyle.Left;
             this.statusLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLabel.Location = new System.Drawing.Point(159, 235);
+            this.statusLabel.Location = new System.Drawing.Point(159, 250);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(265, 86);
+            this.statusLabel.Size = new System.Drawing.Size(265, 71);
             this.statusLabel.TabIndex = 1;
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -211,6 +212,8 @@ namespace ScooTeqBooking.Pages {
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::ScooTeqBooking.Properties.Resources.skyline2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

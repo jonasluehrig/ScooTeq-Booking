@@ -75,10 +75,12 @@ namespace ScooTeqBooking.Pages
                 db.Add(customer);
 
                 try {
-                    await db.SaveChangesAsync();
+                    _ = await db.SaveChangesAsync();
                 } catch (Exception ex) {
                     if (((SqliteException) ex.InnerException).SqliteErrorCode == 19) {
                         MessageBox.Show(this, "Der Benutzername ist bereits vergeben.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Cursor = Cursors.Default;
+                        this.Enabled = true;
                     } else {
                         MessageBox.Show(
                             this,
@@ -116,6 +118,7 @@ namespace ScooTeqBooking.Pages
         private void loginPassword_KeyDown(object sender, KeyEventArgs e) {
             if(e.KeyCode == Keys.Enter) {
                 e.Handled = true;
+                e.SuppressKeyPress = true;
                 LoginButton_Click(null, null);
             }
         }

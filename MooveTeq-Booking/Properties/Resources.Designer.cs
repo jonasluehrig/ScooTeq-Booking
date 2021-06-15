@@ -39,7 +39,7 @@ namespace ScooTeqBooking.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MooveTeqBooking.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ScooTeqBooking.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -113,6 +113,16 @@ namespace ScooTeqBooking.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password_16px {
+            get {
+                object obj = ResourceManager.GetObject("password_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap registration_16px {
             get {
                 object obj = ResourceManager.GetObject("registration_16px", resourceCulture);
@@ -123,9 +133,9 @@ namespace ScooTeqBooking.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap registration_16px1 {
+        internal static System.Drawing.Bitmap ScooTec3 {
             get {
-                object obj = ResourceManager.GetObject("registration_16px1", resourceCulture);
+                object obj = ResourceManager.GetObject("ScooTec3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +143,19 @@ namespace ScooTeqBooking.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ScooTec3 {
+        internal static System.Drawing.Bitmap ScooTec3_alt {
             get {
-                object obj = ResourceManager.GetObject("ScooTec3", resourceCulture);
+                object obj = ResourceManager.GetObject("ScooTec3_alt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skyline2 {
+            get {
+                object obj = ResourceManager.GetObject("skyline2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
