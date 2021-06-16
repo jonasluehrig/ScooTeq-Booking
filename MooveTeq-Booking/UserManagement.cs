@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ScooTeqBooking {
     public partial class UserManagement : Form {
-        private EventHandler _onClosingCallback;
+        private readonly EventHandler onClosingCallback;
 
         public UserManagement(EventHandler onClosingCallback) {
             InitializeComponent();
-            _onClosingCallback = onClosingCallback;
+            this.onClosingCallback = onClosingCallback;
         }
 
         public async void Form_Load(object sender, EventArgs e) {
@@ -28,7 +28,7 @@ namespace ScooTeqBooking {
 
             double totalCost = 0;
             var amountOfTrips = 0;
-            TimeSpan totalDrivenTime = default(TimeSpan);
+            TimeSpan totalDrivenTime = default;
 
             foreach (Data.Booking booking in customer.Bookings) {
                 totalCost += booking.TotalTripCost;
@@ -65,8 +65,8 @@ namespace ScooTeqBooking {
         }
 
         private void closeButton_Click(object sender, EventArgs e) {
-            if (!(_onClosingCallback is null)) {
-                _onClosingCallback(this, new EventArgs());
+            if (!(onClosingCallback is null)) {
+                onClosingCallback(this, new EventArgs());
             }
 
             Close();

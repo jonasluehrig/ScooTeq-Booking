@@ -12,7 +12,7 @@ using ScooTeqBooking.Data;
 namespace ScooTeqBooking {
     public partial class UserEditor : Form {
         public Customer EditedCustomer { get; internal set; }
-        
+
         public UserEditor(Customer customer) {
             InitializeComponent();
             EditedCustomer = customer;

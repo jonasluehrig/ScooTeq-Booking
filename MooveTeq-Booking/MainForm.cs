@@ -5,14 +5,14 @@ using System.Windows.Forms;
 
 namespace ScooTeqBooking {
     public partial class MainForm : Form {
-        public bool DisallowClosing = false;
+        public bool DisallowClosing { get; set; } = false;
 
         public MainForm() {
             InitializeComponent();
 
             ChangeView(new Pages.LoginOrRegister(this));
 
-            if (! File.Exists("Customers.sqlite")) {
+            if (!File.Exists("Customers.sqlite")) {
                 using (var db = new Data.DatabaseContext()) {
                     db.Database?.Migrate();
                 }

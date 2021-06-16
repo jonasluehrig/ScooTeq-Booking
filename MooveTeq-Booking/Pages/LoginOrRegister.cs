@@ -10,10 +10,10 @@ namespace ScooTeqBooking.Pages
     public partial class LoginOrRegister : UserControl {
         private readonly MainForm parent;
 
-        public LoginOrRegister(MainForm Parent) {
+        public LoginOrRegister(MainForm parent) {
             InitializeComponent();
 
-            parent = Parent;
+            this.parent = parent;
         }
 
         private async void LoginButton_Click(object sender, System.EventArgs e) {
@@ -28,7 +28,7 @@ namespace ScooTeqBooking.Pages
                 customer = customers.Count() == 1 ? customers.First() : null;
             }
 
-            if(customer is null) {
+            if (customer is null) {
                 MessageBox.Show(this, "Benutzer nicht gefunden.", "Anmeldefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 this.Cursor = Cursors.Default;
@@ -38,7 +38,7 @@ namespace ScooTeqBooking.Pages
             }
 
             var passwordCorrect = await Task.Run(() => PasswordHashing.TestPasswordAgainstHash(loginPassword.Text, customer.PasswordHash));
-            
+
             this.Cursor = Cursors.Default;
             this.Enabled = true;
 
@@ -84,7 +84,7 @@ namespace ScooTeqBooking.Pages
                     } else {
                         MessageBox.Show(
                             this,
-                            $"Ein unbekannter Datenbankfehler ist aufgetreten:\n\n{ ex.Message }",
+                            $"Ein unbekannter Datenbankfehler ist aufgetreten:\n\n{ex.Message}",
                             "Fehler",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
@@ -116,7 +116,7 @@ namespace ScooTeqBooking.Pages
         }
 
         private void loginPassword_KeyDown(object sender, KeyEventArgs e) {
-            if(e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter) {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
                 LoginButton_Click(null, null);

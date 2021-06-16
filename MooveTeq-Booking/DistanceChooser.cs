@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using ScooTeqBooking.Data;
-using System.Threading.Tasks;
 
 namespace ScooTeqBooking {
     public partial class DistanceChooser : Form {

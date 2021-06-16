@@ -4,20 +4,25 @@ using System.Windows.Forms;
 
 namespace ScooTeqBooking.Pages {
     public partial class TimeDistanceChoice : UserControl {
-        private MainForm _parent;
-        private Customer _customer;
+        private readonly MainForm parent;
+
+        public TimeDistanceChoice(MainForm parent) {
+            this.parent = parent;
+        }
+
+        private readonly Customer customer;
         private UserManagement userManagement;
-        
+
         public TimeDistanceChoice(MainForm parent, Customer customer) {
             InitializeComponent();
-            _parent = parent;
-            _customer = customer;
+            this.parent = parent;
+            this.customer = customer;
         }
 
         private void TimeDistanceChoice_Load(object sender, EventArgs e) {
-            welcomeMessageLabel.Text = $"Willkommen, {_customer.FirstName} {_customer.LastName}!";
-            usernameLabel.Text = _customer.UserName;
-            adminMenu.Visible = _customer.IsAdmin;
+            welcomeMessageLabel.Text = $"Willkommen, {customer.FirstName} {customer.LastName}!";
+            usernameLabel.Text = customer.UserName;
+            adminMenu.Visible = customer.IsAdmin;
         }
 
         private void logoutButton_Click(object sender, EventArgs e) {
@@ -25,7 +30,7 @@ namespace ScooTeqBooking.Pages {
                 userManagement.Close();
             }
 
-            _parent.ChangeView(new LoginOrRegister(_parent));
+            parent.ChangeView(new LoginOrRegister(parent));
         }
 
         private void bookByTimeButton_Click(object sender, EventArgs e) {
@@ -33,7 +38,7 @@ namespace ScooTeqBooking.Pages {
                 userManagement.Close();
             }
 
-            _parent.ChangeView(new BookByTime(_parent, _customer));
+            parent.ChangeView(new BookByTime(parent, customer));
         }
 
         private void bookByDistanceButton_Click(object sender, EventArgs e) {
@@ -41,7 +46,7 @@ namespace ScooTeqBooking.Pages {
                 userManagement.Close();
             }
 
-            _parent.ChangeView(new BookByDistance(_parent, _customer));
+            parent.ChangeView(new BookByDistance(parent, customer));
         }
 
         private void openUserManagementButton_Click(object sender, EventArgs e) {

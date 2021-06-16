@@ -1,67 +1,66 @@
-﻿using ScooTeqBooking.Data;
-using System.Windows.Forms;
+﻿using System;
 using System.Drawing;
-using System;
+using System.Windows.Forms;
+using ScooTeqBooking.Data;
 
 namespace ScooTeqBooking.Pages {
     public partial class BookByTime : UserControl {
-        MainForm _parent;
-        Customer _customer;
-
-        Timer _timer = new Timer() {
+        private readonly MainForm parent;
+        private readonly Customer customer;
+        private readonly Timer timer = new Timer() {
             Interval = 50
         };
 
-        DateTime _startTime;
-        DateTime _pauseStartTime;
-        TimeSpan _totalPauseTime = new TimeSpan(0);
+        private DateTime startTime;
+        private DateTime pauseStartTime;
+        private TimeSpan totalPauseTime = new TimeSpan(0);
 
         public BookByTime(MainForm parent, Customer customer) {
             InitializeComponent();
 
-            _parent = parent;
-            _customer = customer;
+            this.parent = parent;
+            this.customer = customer;
         }
 
         private void BookByTime_Load(object sender, EventArgs e) {
-            usernameLabel.Text = _customer.UserName;
-            welcomeMessageLabel.Text = $"Gute Fahrt, {_customer.FirstName} {_customer.LastName}!";
+            usernameLabel.Text = customer.UserName;
+            welcomeMessageLabel.Text = $"Gute Fahrt, {customer.FirstName} {customer.LastName}!";
             statusLabel.Text = "Drücke Start um die Fahrt zu beginnen.";
 
-            timerLabel.MouseWheel += new MouseEventHandler((object _sender, MouseEventArgs _e) => {
-                System.Diagnostics.Debug.Print(_e.Delta.ToString());
-                _startTime -= new TimeSpan(0, 0, _e.Delta / 2);
+            timerLabel.MouseWheel += new MouseEventHandler((object mouse_sender, MouseEventArgs mouse_e) => {
+                System.Diagnostics.Debug.Print(mouse_e.Delta.ToString());
+                startTime -= new TimeSpan(0, 0, mouse_e.Delta / 2);
             });
         }
 
         private void timer_Tick(object sender, EventArgs e) {
-            var tripTime = DateTime.Now - _startTime - _totalPauseTime;
-            var minuteTime = Math.Ceiling(tripTime.TotalMinutes) * Consts.CostPerMinuteInEuro + Consts.BasePriceInEuro;
+            var tripTime = DateTime.Now - startTime - totalPauseTime;
+            var minuteTime = (Math.Ceiling(tripTime.TotalMinutes) * Consts.CostPerMinuteInEuro) + Consts.BasePriceInEuro;
 
             timerLabel.Text = tripTime.ToString("hh':'mm':'ss");
             timerLabel.Text += $"\n({minuteTime.ToString("0.00")}€)";
         }
 
         private void startCounterButton_Click(object sender, EventArgs e) {
-            _startTime = DateTime.Now;
-            _timer.Tick += new EventHandler(timer_Tick);
-            _timer.Start();
+            startTime = DateTime.Now;
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
             stopCounterButton.Enabled = true;
             logoutButton.Enabled = false;
 
-            statusLabel.Text = $"Fahrt um {_startTime.ToShortTimeString()} gestartet";
+            statusLabel.Text = $"Fahrt um {startTime.ToShortTimeString()} gestartet";
 
             startCounterButton.Text = "Pausieren";
             startCounterButton.ForeColor = Color.Orange;
             startCounterButton.Click -= startCounterButton_Click;
             startCounterButton.Click += pauseCounterButton_Click;
 
-            _parent.DisallowClosing = true;
+            parent.DisallowClosing = true;
         }
 
         private void pauseCounterButton_Click(object sender, EventArgs e) {
-            _pauseStartTime = DateTime.Now;
-            _timer.Stop();
+            pauseStartTime = DateTime.Now;
+            timer.Stop();
             startCounterButton.Text = "Weiter";
             statusLabel.Text = "Fahrt pausiert, Scooter gesperrt.\nDrücke auf Weiter um die Fahrt fortzusetzen";
 
@@ -70,8 +69,8 @@ namespace ScooTeqBooking.Pages {
         }
 
         private void resumeCounterButton_Click(object sender, EventArgs e) {
-            _totalPauseTime += DateTime.Now - _pauseStartTime;
-            _timer.Start();
+            totalPauseTime += DateTime.Now - pauseStartTime;
+            timer.Start();
             startCounterButton.Text = "Pausieren";
             statusLabel.Text = "Fahrt fortgesetzt";
 
@@ -80,30 +79,30 @@ namespace ScooTeqBooking.Pages {
         }
 
         private void stopCounterButton_Click(object sender, EventArgs e) {
-            _timer.Stop();
+            timer.Stop();
             stopCounterButton.Enabled = false;
 
-            _parent.ChangeView(
+            parent.ChangeView(
                 new BookingOverview(
-                    _parent,
-                    _customer,
+                    parent,
+                    customer,
                     new TripInformation() {
-                        TripStartTime = _startTime,
+                        TripStartTime = startTime,
                         TripEndTime = DateTime.Now,
                         BillTripBy = TripInformation.BookingType.ByTime,
-                        TotalTime = DateTime.Now - _startTime - _totalPauseTime
+                        TotalTime = DateTime.Now - startTime - totalPauseTime
                     }
                 )
             );
         }
 
         private void logoutButton_Click(object sender, EventArgs e) {
-            _parent.ChangeView(new LoginOrRegister(_parent));
+            parent.ChangeView(new LoginOrRegister(parent));
         }
 
         private void timerLabel_MouseDown(object sender, MouseEventArgs e) {
-            if(e.Button == MouseButtons.Middle) {
-                _startTime -= new TimeSpan(0, 1, 0);
+            if (e.Button == MouseButtons.Middle) {
+                startTime -= new TimeSpan(0, 1, 0);
             }
         }
     }

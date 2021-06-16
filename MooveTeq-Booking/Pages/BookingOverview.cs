@@ -12,55 +12,55 @@ using ScooTeqBooking.Data;
 
 namespace ScooTeqBooking.Pages {
     public partial class BookingOverview : UserControl {
-        MainForm _parent;
-        Customer _customer;
-        TripInformation _tripInformation;
+        private readonly MainForm parent;
+        private readonly Customer customer;
+        private readonly TripInformation tripInformation;
 
-        double _totalCost;
+        private double totalCost;
 
         public BookingOverview(MainForm parent, Customer customer, TripInformation tripInformation) {
             InitializeComponent();
 
-            _parent = parent;
-            _customer = customer;
-            _tripInformation = tripInformation;
+            this.parent = parent;
+            this.customer = customer;
+            this.tripInformation = tripInformation;
         }
 
         public async void Form_Load(object sender, EventArgs e) {
-            welcomeMessageLabel.Text = $"Auf Wiedersehen, {_customer.FirstName} {_customer.LastName}!";
-            usernameLabel.Text = _customer.UserName;
+            welcomeMessageLabel.Text = $"Auf Wiedersehen, {customer.FirstName} {customer.LastName}!";
+            usernameLabel.Text = customer.UserName;
 
-            switch (_tripInformation.BillTripBy) {
+            switch (tripInformation.BillTripBy) {
                 case TripInformation.BookingType.ByTime:
-                    _totalCost = (Math.Ceiling(_tripInformation.TotalTime.Value.TotalMinutes) * Consts.CostPerMinuteInEuro) + Consts.BasePriceInEuro;
+                    totalCost = (Math.Ceiling(tripInformation.TotalTime.Value.TotalMinutes) * Consts.CostPerMinuteInEuro) + Consts.BasePriceInEuro;
 
                     string timeText = string.Empty;
-                    if (_tripInformation.TotalTime.Value.Hours > 0) {
-                        timeText += $"{_tripInformation.TotalTime.Value.Hours} Stunden, ";
+                    if (tripInformation.TotalTime.Value.Hours > 0) {
+                        timeText += $"{tripInformation.TotalTime.Value.Hours} Stunden, ";
                     }
 
-                    if (_tripInformation.TotalTime.Value.Minutes > 0) {
-                        timeText += $"{_tripInformation.TotalTime.Value.Minutes} Minuten, ";
+                    if (tripInformation.TotalTime.Value.Minutes > 0) {
+                        timeText += $"{tripInformation.TotalTime.Value.Minutes} Minuten, ";
                     }
 
-                    if (_tripInformation.TotalTime.Value.Seconds > 0) {
-                        timeText += $"{_tripInformation.TotalTime.Value.Seconds} Sekunden, ";
+                    if (tripInformation.TotalTime.Value.Seconds > 0) {
+                        timeText += $"{tripInformation.TotalTime.Value.Seconds} Sekunden, ";
                     }
 
                     timeText = timeText.TrimEnd(',', ' ');
 
                     tripLengthLabel.Text = $"Du bist {timeText} gefahren.";
-                    tripTotalCostLabel.Text = $"{_totalCost.ToString("C", CultureInfo.CurrentCulture)}";
+                    tripTotalCostLabel.Text = $"{totalCost.ToString("C", CultureInfo.CurrentCulture)}";
 
-                    _customer.Bookings.Add(new Booking() {
-                        StartTime = _tripInformation.TripStartTime,
-                        EndTime = _tripInformation.TripEndTime,
-                        TotalTripCost = _totalCost
+                    customer.Bookings.Add(new Booking() {
+                        StartTime = tripInformation.TripStartTime,
+                        EndTime = tripInformation.TripEndTime,
+                        TotalTripCost = totalCost
                     });
 
                     try {
                         using (var db = new DatabaseContext()) {
-                            db.Update(_customer);
+                            db.Update(customer);
                             await db.SaveChangesAsync();
                         }
                     } catch (Exception ex) {
@@ -69,21 +69,21 @@ namespace ScooTeqBooking.Pages {
 
                     break;
                 case TripInformation.BookingType.ByDistance:
-                    _totalCost = (_tripInformation.DrivenDistance.Value * Consts.CostPerKilometerInEuro) + Consts.BasePriceInEuro;
+                    totalCost = (tripInformation.DrivenDistance.Value * Consts.CostPerKilometerInEuro) + Consts.BasePriceInEuro;
 
-                    tripLengthLabel.Text = $"Du bist {Math.Round(_tripInformation.DrivenDistance.Value,3)}km gefahren.";
-                    tripTotalCostLabel.Text = $"{_totalCost.ToString("C", CultureInfo.CurrentCulture)}";
+                    tripLengthLabel.Text = $"Du bist {Math.Round(tripInformation.DrivenDistance.Value, 3)}km gefahren.";
+                    tripTotalCostLabel.Text = $"{totalCost.ToString("C", CultureInfo.CurrentCulture)}";
 
-                    _customer.Bookings.Add(new Booking() {
-                        StartTime = _tripInformation.TripStartTime,
-                        EndTime = _tripInformation.TripEndTime,
-                        TotalTripCost = _totalCost,
-                        TripDistance = _tripInformation.DrivenDistance.Value
+                    customer.Bookings.Add(new Booking() {
+                        StartTime = tripInformation.TripStartTime,
+                        EndTime = tripInformation.TripEndTime,
+                        TotalTripCost = totalCost,
+                        TripDistance = tripInformation.DrivenDistance.Value
                     });
 
                     try {
                         using (var db = new DatabaseContext()) {
-                            db.Update(_customer);
+                            db.Update(customer);
                             await db.SaveChangesAsync();
                         }
                     } catch (Exception ex) {
@@ -95,9 +95,9 @@ namespace ScooTeqBooking.Pages {
         }
 
         private void payAndCloseButton_Click(object sender, EventArgs e) {
-            new PaymentProcessing(_customer, _totalCost).ShowDialog();
-            _parent.DisallowClosing = false;
-            _parent.ChangeView(new TimeDistanceChoice(_parent, _customer));
+            new PaymentProcessing(customer, totalCost).ShowDialog();
+            parent.DisallowClosing = false;
+            parent.ChangeView(new TimeDistanceChoice(parent, customer));
         }
     }
 }
