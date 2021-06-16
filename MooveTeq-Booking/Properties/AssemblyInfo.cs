@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("EFTest")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ScooTeq© Scooter buchen")]
+[assembly: AssemblyDescription("Bietet eine Benutzerschnittstelle zum Buchen von Scootern der Firma ScooTeq©")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EFTest")]
+[assembly: AssemblyCompany("Binbows GmbH (Inh. Jerome, Jonas, Marlon, Max)")]
+[assembly: AssemblyProduct("ScooTeq© Scooter buchen")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

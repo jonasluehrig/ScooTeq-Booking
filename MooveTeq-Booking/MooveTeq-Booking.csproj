@@ -7,14 +7,15 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4B12E1A0-AD7D-4CF4-960E-878286EC31B2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EFTest</RootNamespace>
-    <AssemblyName>EFTest</AssemblyName>
+    <RootNamespace>ScooTeqBooking</RootNamespace>
+    <AssemblyName>ScooTeqBooking</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <CodeAnalysisRuleSet>..\MooveTeq.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +36,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ScooTec3_alt.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ScooTeqBooking.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bogus, Version=33.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.33.0.2\lib\net40\Bogus.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMapsApi, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleMapsApi.0.80.0\lib\net40\GoogleMapsApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -199,22 +212,106 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\Booking.cs" />
-    <Compile Include="DataTypes\Customer.cs" />
-    <Compile Include="DummyCustomer.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Data\Booking.cs" />
+    <Compile Include="Data\Consts.cs" />
+    <Compile Include="Data\Customer.cs" />
+    <Compile Include="Data\DatabaseContext.cs" />
+    <Compile Include="Data\DistanceChosenEventArgs.cs" />
+    <Compile Include="Data\MapsApi.cs" />
+    <Compile Include="Data\PasswordHashing.cs" />
+    <Compile Include="Data\TripInformation.cs" />
+    <Compile Include="DistanceChooser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DistanceChooser.Designer.cs">
+      <DependentUpon>DistanceChooser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20210603113643_Init.cs" />
-    <Compile Include="Migrations\20210603113643_Init.designer.cs">
-      <DependentUpon>20210603113643_Init.cs</DependentUpon>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210608135802_DatabaseMigration.cs" />
+    <Compile Include="Migrations\20210608135802_DatabaseMigration.designer.cs">
+      <DependentUpon>20210608135802_DatabaseMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
+    <Compile Include="Pages\BookByDistance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\BookByDistance.Designer.cs">
+      <DependentUpon>BookByDistance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BookByTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\BookByTime.Designer.cs">
+      <DependentUpon>BookByTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BookingOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\BookingOverview.Designer.cs">
+      <DependentUpon>BookingOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginOrRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\LoginOrRegister.Designer.cs">
+      <DependentUpon>LoginOrRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimeDistanceChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\TimeDistanceChoice.Designer.cs">
+      <DependentUpon>TimeDistanceChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentProcessing.Designer.cs">
+      <DependentUpon>PaymentProcessing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEditor.Designer.cs">
+      <DependentUpon>UserEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement.Designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DistanceChooser.resx">
+      <DependentUpon>DistanceChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\BookByDistance.resx">
+      <DependentUpon>BookByDistance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\BookByTime.resx">
+      <DependentUpon>BookByTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\BookingOverview.resx">
+      <DependentUpon>BookingOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginOrRegister.resx">
+      <DependentUpon>LoginOrRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\TimeDistanceChoice.resx">
+      <DependentUpon>TimeDistanceChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentProcessing.resx">
+      <DependentUpon>PaymentProcessing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -223,7 +320,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserEditor.resx">
+      <DependentUpon>UserEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -238,6 +345,51 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registration_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_shield_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif-2-11bc2ebf0339.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper_money_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScooTec3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_male_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registration_16px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skyline2.png" />
+    <None Include="Resources\hamburg-skyline.jpg" />
+    <None Include="Resources\skyline.png" />
+    <None Include="Resources\password_16px.png" />
+    <None Include="Resources\ScooTec3_alt.png" />
+    <Content Include="ScooTec3_alt.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -247,4 +399,9 @@
     <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.15\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.15\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>; Move all assemblies and related files to lib folder
+ROBOCOPY "$(TargetDir) " "$(TargetDir)lib\ " /XF *.exe *.config *.manifest /XD lib /E /IS /MOVE
+if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25</PostBuildEvent>
+  </PropertyGroup>
 </Project>
