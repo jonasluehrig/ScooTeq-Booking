@@ -1,4 +1,4 @@
-# MooveTeq-Booking
+# ScooTeq-Booking
 
 Build with Windows Forms and .Net
 
